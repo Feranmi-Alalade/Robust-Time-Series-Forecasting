@@ -2878,3 +2878,447 @@ mse:0.2007104605436325, mae:0.26002365350723267
 Solar_720_720_CycleNet_Solar_ftM_sl720_pl720_cycle144_mlp_seed2028  
 mse:0.20077380537986755, mae:0.25914350152015686
 
+traffic_96_96_CycleNet_custom_ftM_sl96_pl96_cycle168_linear_seed2024  
+mse:0.4803074300289154, mae:0.31357187032699585
+
+ETTm1_96_96_CycleNet_ETTm1_ftM_sl96_pl96_cycle96_linear_seed2024  
+mse:0.325470894575119, mae:0.36335477232933044
+
+ETTm1_96_96_CycleNet_ETTm1_ftM_sl96_pl96_cycle96_mlp_seed2024  
+mse:0.32089462876319885, mae:0.36340615153312683
+
+traffic_96_96_CycleNet_custom_ftM_sl96_pl96_cycle168_mlp_seed2024  
+mse:0.4672994613647461, mae:0.28425607085227966
+
+ETTm1_96_192_CycleNet_ETTm1_ftM_sl96_pl192_cycle96_mlp_seed2024  
+mse:0.36400917172431946, mae:0.3889026343822479
+
+traffic_96_192_CycleNet_custom_ftM_sl96_pl192_cycle168_mlp_seed2024  
+mse:0.46733853220939636, mae:0.28566983342170715
+
+ETTm1_96_192_CycleNet_ETTm1_ftM_sl96_pl192_cycle96_linear_seed2024  
+mse:0.36568036675453186, mae:0.3818148672580719
+
+traffic_96_192_CycleNet_custom_ftM_sl96_pl192_cycle168_linear_seed2024  
+mse:0.48213303089141846, mae:0.31332042813301086
+
+ETTm1_336_96_CycleNet_ETTm1_ftM_sl336_pl96_cycle96_linear_seed2024  
+mse:0.298671156167984, mae:0.34711670875549316
+
+ETTm1_336_192_CycleNet_ETTm1_ftM_sl336_pl192_cycle96_linear_seed2024  
+mse:0.33324798941612244, mae:0.3666840195655823
+
+traffic_336_96_CycleNet_custom_ftM_sl336_pl96_cycle168_linear_seed2024  
+mse:0.395732045173645, mae:0.27571049332618713
+
+traffic_336_192_CycleNet_custom_ftM_sl336_pl192_cycle168_linear_seed2024  
+mse:0.4115445911884308, mae:0.2821391224861145
+
+ETTm1_720_96_CycleNet_ETTm1_ftM_sl720_pl96_cycle96_linear_seed2024  
+mse:0.30533868074417114, mae:0.35300812125205994
+
+ETTm1_720_192_CycleNet_ETTm1_ftM_sl720_pl192_cycle96_linear_seed2024  
+mse:0.33728504180908203, mae:0.3715382516384125
+
+traffic_720_96_CycleNet_custom_ftM_sl720_pl96_cycle168_linear_seed2024  
+mse:0.3812210261821747, mae:0.26646146178245544
+
+ETTm1_336_96_CycleNet_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.3003954291343689, mae:0.3515166938304901
+
+ETTm1_336_192_CycleNet_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3365503251552582, mae:0.376234233379364
+
+traffic_336_96_CycleNet_custom_ftM_sl336_pl96_cycle168_mlp_seed2024  
+mse:0.3870425224304199, mae:0.2685375511646271
+
+traffic_720_192_CycleNet_custom_ftM_sl720_pl192_cycle168_linear_seed2024  
+mse:0.39359036087989807, mae:0.2720077335834503
+
+traffic_336_192_CycleNet_custom_ftM_sl336_pl192_cycle168_mlp_seed2024  
+mse:0.40427741408348083, mae:0.2761704921722412
+
+ETTm1_720_96_CycleNet_ETTm1_ftM_sl720_pl96_cycle96_mlp_seed2024  
+mse:0.30176880955696106, mae:0.35760921239852905
+
+ETTm1_720_192_CycleNet_ETTm1_ftM_sl720_pl192_cycle96_mlp_seed2024  
+mse:0.33850935101509094, mae:0.37683379650115967
+
+traffic_720_96_CycleNet_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.37475112080574036, mae:0.2680816054344177
+
+traffic_720_192_CycleNet_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.39098060131073, mae:0.27593091130256653
+
+ETTm1_336_96_CycleNet_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.2927328944206238, mae:0.34552276134490967
+
+ETTm1_336_96_CycleNetMix_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.29085445404052734, mae:0.34690260887145996
+
+ETTm1_336_192_CycleNet_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.33171364665031433, mae:0.36813777685165405
+
+ETTm1_336_192_CycleNetMix_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3318783640861511, mae:0.3713879883289337
+
+traffic_720_96_CycleNet_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.39493879675865173, mae:0.29045817255973816
+
+ETTm1_336_96_CycleNet_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.29057690501213074, mae:0.3440510034561157
+
+traffic_720_96_CycleNetMix_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.40059834718704224, mae:0.30144232511520386
+
+ETTm1_336_96_CycleNetMix_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.2889748215675354, mae:0.3449572026729584
+
+traffic_720_192_CycleNet_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.41192030906677246, mae:0.30055615305900574
+
+ETTm1_336_192_CycleNet_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3290746808052063, mae:0.3667530119419098
+
+traffic_720_192_CycleNetMix_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.4223588705062866, mae:0.31474027037620544
+
+ETTm1_336_192_CycleNetMix_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.329978346824646, mae:0.3703021705150604
+
+ETTm1_336_96_CycleNetMix_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.2889748215675354, mae:0.3449572026729584
+
+ETTm1_336_192_CycleNetMix_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.329978346824646, mae:0.3703021705150604
+
+traffic_720_96_CycleNetMix_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.40059834718704224, mae:0.30144232511520386
+
+traffic_720_192_CycleNetMix_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.4223588705062866, mae:0.31474027037620544
+
+weather_CycleNet_336_96_CycleNet_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.1592075675725937, mae:0.21174193918704987
+
+weather_CycleNetMix_336_96_CycleNetMix_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.15121127665042877, mae:0.2051621526479721
+
+ETTm1_336_96_CycleNet_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.2927328944206238, mae:0.34552276134490967
+
+weather_CycleNetMixLag_336_96_CycleNetMixLag_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.15203264355659485, mae:0.20610207319259644
+
+ETTm1_336_96_CycleNetMix_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.29085445404052734, mae:0.34690260887145996
+
+ETTm1_336_96_CycleNetMixLag_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.29120269417762756, mae:0.34780436754226685
+
+weather_CycleNet_336_192_CycleNet_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.2023169845342636, mae:0.24971173703670502
+
+ETTm1_336_192_CycleNet_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.33171364665031433, mae:0.36813777685165405
+
+weather_CycleNetMix_336_192_CycleNetMix_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.19478684663772583, mae:0.24593684077262878
+
+ETTm1_336_192_CycleNetMix_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3318783640861511, mae:0.3713879883289337
+
+weather_CycleNetMixLag_336_192_CycleNetMixLag_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.19755621254444122, mae:0.24984267354011536
+
+ETTm1_336_192_CycleNetMixLag_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3325227200984955, mae:0.37241172790527344
+
+traffic_CycleNet_720_96_CycleNet_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.39493879675865173, mae:0.29045817255973816
+
+traffic_CycleNetMix_720_96_CycleNetMix_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.40059834718704224, mae:0.30144232511520386
+
+traffic_CycleNetMixLag_720_96_CycleNetMixLag_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.4005793035030365, mae:0.3007339537143707
+
+traffic_CycleNet_720_192_CycleNet_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.41192030906677246, mae:0.30055615305900574
+
+traffic_CycleNetMix_720_192_CycleNetMix_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.4223588705062866, mae:0.31474027037620544
+
+traffic_CycleNetMixLag_720_192_CycleNetMixLag_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.4229956865310669, mae:0.3157690167427063
+
+traffic_CycleNet_720_96_CycleNet_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.39493879675865173, mae:0.29045817255973816
+
+traffic_CycleNetMix_720_96_CycleNetMix_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.40059834718704224, mae:0.30144232511520386
+
+traffic_CycleNetMixLowRank_720_96_CycleNetMixLowRank_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.39864304661750793, mae:0.3017631471157074
+
+traffic_CycleNet_720_192_CycleNet_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.41192030906677246, mae:0.30055615305900574
+
+traffic_CycleNetMix_720_192_CycleNetMix_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.4223588705062866, mae:0.31474027037620544
+
+traffic_CycleNetMixLowRank_720_192_CycleNetMixLowRank_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.4204709231853485, mae:0.31615814566612244
+
+traffic_CycleNet_720_96_CycleNet_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.39493879675865173, mae:0.29045817255973816
+
+traffic_CycleNetTrendMix_720_96_CycleNetTrendMix_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.3999365568161011, mae:0.3032850921154022
+
+weather_CycleNet_336_96_CycleNet_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.152291938662529, mae:0.2050241380929947
+
+weather_CycleNetTrendMix_336_96_CycleNetTrendMix_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.15001477301120758, mae:0.20291388034820557
+
+ETTm1_CycleNet_336_96_CycleNet_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.29057690501213074, mae:0.3440510034561157
+
+ETTm1_CycleNetTrendMix_336_96_CycleNetTrendMix_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.28785577416419983, mae:0.34382712841033936
+
+traffic_CycleNet_720_192_CycleNet_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.41192030906677246, mae:0.30055615305900574
+
+traffic_CycleNetTrendMix_720_192_CycleNetTrendMix_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.41917553544044495, mae:0.3150741755962372
+
+weather_CycleNet_336_192_CycleNet_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.19450116157531738, mae:0.24442580342292786
+
+weather_CycleNetTrendMix_336_192_CycleNetTrendMix_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.1934511512517929, mae:0.24328017234802246
+
+ETTm1_CycleNet_336_192_CycleNet_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3290746808052063, mae:0.3667530119419098
+
+ETTm1_CycleNetTrendMix_336_192_CycleNetTrendMix_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3294399380683899, mae:0.36926472187042236
+
+traffic_CycleNetTrend_720_96_CycleNetTrend_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.39651253819465637, mae:0.2920464277267456
+
+weather_CycleNetTrend_336_96_CycleNetTrend_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.1526930034160614, mae:0.2058865875005722
+
+ETTm1_CycleNetTrend_336_96_CycleNetTrend_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.28994569182395935, mae:0.34351304173469543
+
+traffic_CycleNetTrend_720_192_CycleNetTrend_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.41027089953422546, mae:0.2989276647567749
+
+weather_CycleNetTrend_336_192_CycleNetTrend_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.1952957808971405, mae:0.24555014073848724
+
+ETTm1_CycleNetTrend_336_192_CycleNetTrend_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3304230570793152, mae:0.3675236105918884
+
+traffic_CycleNet_720_96_CycleNet_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.39493879675865173, mae:0.29045817255973816
+
+traffic_CycleNetTrendMix_720_96_CycleNetTrendMix_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.3999365568161011, mae:0.3032850921154022
+
+traffic_CycleNetMix_720_96_CycleNetMix_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.40059834718704224, mae:0.30144232511520386
+
+traffic_CycleNetTrend_720_96_CycleNetTrend_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.39651253819465637, mae:0.2920464277267456
+
+traffic_CycleNetMixLowRank_720_96_CycleNetMixLowRank_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.39864304661750793, mae:0.3017631471157074
+
+traffic_CycleNetMixLag_720_96_CycleNetMixLag_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.40057995915412903, mae:0.30073487758636475
+
+weather_CycleNet_336_96_CycleNet_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.152291938662529, mae:0.2050241380929947
+
+weather_CycleNetTrendMix_336_96_CycleNetTrendMix_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.15001477301120758, mae:0.20291388034820557
+
+weather_CycleNetMix_336_96_CycleNetMix_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.1501789391040802, mae:0.20376712083816528
+
+weather_CycleNetTrend_336_96_CycleNetTrend_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.1526930034160614, mae:0.2058865875005722
+
+weather_CycleNetMixLowRank_336_96_CycleNetMixLowRank_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.14972959458827972, mae:0.2025901824235916
+
+weather_CycleNetMixLag_336_96_CycleNetMixLag_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.15095192193984985, mae:0.20430605113506317
+
+ETTm1_CycleNet_336_96_CycleNet_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.29057690501213074, mae:0.3440510034561157
+
+ETTm1_CycleNetTrendMix_336_96_CycleNetTrendMix_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.28785577416419983, mae:0.34382712841033936
+
+ETTm1_CycleNetMix_336_96_CycleNetMix_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.28864535689353943, mae:0.3447694778442383
+
+ETTm1_CycleNetTrend_336_96_CycleNetTrend_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.28994569182395935, mae:0.34351304173469543
+
+ETTm1_CycleNetMixLowRank_336_96_CycleNetMixLowRank_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.28779274225234985, mae:0.34405478835105896
+
+ETTm1_CycleNetMixLag_336_96_CycleNetMixLag_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.28833186626434326, mae:0.34546470642089844
+
+traffic_CycleNet_720_192_CycleNet_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.41192030906677246, mae:0.30055615305900574
+
+traffic_CycleNetTrendMix_720_192_CycleNetTrendMix_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.41917553544044495, mae:0.3150741755962372
+
+traffic_CycleNetMix_720_192_CycleNetMix_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.4223588705062866, mae:0.31474027037620544
+
+traffic_CycleNetTrend_720_192_CycleNetTrend_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.41027089953422546, mae:0.2989276647567749
+
+traffic_CycleNetMixLowRank_720_192_CycleNetMixLowRank_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.4204709231853485, mae:0.31615814566612244
+
+traffic_CycleNetMixLag_720_192_CycleNetMixLag_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.4229946732521057, mae:0.3157728612422943
+
+weather_CycleNet_336_192_CycleNet_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.19450116157531738, mae:0.24442580342292786
+
+weather_CycleNetTrendMix_336_192_CycleNetTrendMix_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.1934511512517929, mae:0.24328017234802246
+
+weather_CycleNetMix_336_192_CycleNetMix_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.19484476745128632, mae:0.24631887674331665
+
+weather_CycleNetTrend_336_192_CycleNetTrend_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.1952957808971405, mae:0.24555014073848724
+
+weather_CycleNetMixLowRank_336_192_CycleNetMixLowRank_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.1926661878824234, mae:0.24282482266426086
+
+weather_CycleNetMixLag_336_192_CycleNetMixLag_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.19902145862579346, mae:0.2513238191604614
+
+ETTm1_CycleNet_336_192_CycleNet_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3290746808052063, mae:0.3667530119419098
+
+ETTm1_CycleNetTrendMix_336_192_CycleNetTrendMix_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3294399380683899, mae:0.36926472187042236
+
+ETTm1_CycleNetMix_336_192_CycleNetMix_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3299841284751892, mae:0.3707966208457947
+
+ETTm1_CycleNetTrend_336_192_CycleNetTrend_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3304230570793152, mae:0.3675236105918884
+
+ETTm1_CycleNetMixLowRank_336_192_CycleNetMixLowRank_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.32981884479522705, mae:0.3696249723434448
+
+ETTm1_CycleNetMixLag_336_192_CycleNetMixLag_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3325359523296356, mae:0.37251904606819153
+
+traffic_CycleNetTrendMixDense_720_96_CycleNetTrendMixDense_custom_ftM_sl720_pl96_cycle168_mlp_seed2024  
+mse:0.4037878215312958, mae:0.30726438760757446
+
+weather_CycleNetTrendMixDense_336_96_CycleNetTrendMixDense_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.15148554742336273, mae:0.20496486127376556
+
+ETTm1_CycleNetTrendMixDense_336_96_CycleNetTrendMixDense_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.2893524765968323, mae:0.3459293842315674
+
+traffic_CycleNetTrendMixDense_720_192_CycleNetTrendMixDense_custom_ftM_sl720_pl192_cycle168_mlp_seed2024  
+mse:0.4243990480899811, mae:0.3192935287952423
+
+weather_CycleNetTrendMixDense_336_192_CycleNetTrendMixDense_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.19586434960365295, mae:0.24632148444652557
+
+ETTm1_CycleNetTrendMixDense_336_192_CycleNetTrendMixDense_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.33091434836387634, mae:0.3713460862636566
+
+weather_CycleNetMixTune_336_96_ml1_lr0.0001_CycleNetMixTune_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.1498274952173233, mae:0.2026817798614502
+
+weather_CycleNetMixTune_336_96_ml1_lr0.0005_CycleNetMixTune_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.1500556319952011, mae:0.2030569463968277
+
+weather_CycleNetMixTune_336_96_ml1_lr0.001_CycleNetMixTune_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.15292342007160187, mae:0.20588314533233643
+
+weather_CycleNetMixTune_336_96_ml2_lr0.0001_CycleNetMixTune_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.14998309314250946, mae:0.20373928546905518
+
+weather_CycleNetMixTune_336_96_ml2_lr0.0005_CycleNetMixTune_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.15271176397800446, mae:0.2062399685382843
+
+weather_CycleNetMixTune_336_96_ml2_lr0.001_CycleNetMixTune_custom_ftM_sl336_pl96_cycle144_mlp_seed2024  
+mse:0.15393759310245514, mae:0.20746950805187225
+
+ETTm1_CycleNetMixTune_336_96_ml1_lr0.0001_CycleNetMixTune_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.2885199785232544, mae:0.34483301639556885
+
+ETTm1_CycleNetMixTune_336_96_ml1_lr0.0005_CycleNetMixTune_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.29725760221481323, mae:0.3508621156215668
+
+ETTm1_CycleNetMixTune_336_96_ml1_lr0.001_CycleNetMixTune_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.3096165060997009, mae:0.3588654696941376
+
+ETTm1_CycleNetMixTune_336_96_ml2_lr0.0001_CycleNetMixTune_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.2894819378852844, mae:0.3467136323451996
+
+ETTm1_CycleNetMixTune_336_96_ml2_lr0.0005_CycleNetMixTune_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.3018929064273834, mae:0.3555280566215515
+
+ETTm1_CycleNetMixTune_336_96_ml2_lr0.001_CycleNetMixTune_ETTm1_ftM_sl336_pl96_cycle96_mlp_seed2024  
+mse:0.3124573230743408, mae:0.36137518286705017
+
+weather_CycleNetMixTune_336_192_ml1_lr0.0001_CycleNetMixTune_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.19425824284553528, mae:0.24514447152614594
+
+weather_CycleNetMixTune_336_192_ml1_lr0.0005_CycleNetMixTune_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.19861459732055664, mae:0.24889974296092987
+
+weather_CycleNetMixTune_336_192_ml1_lr0.001_CycleNetMixTune_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.20180413126945496, mae:0.2545679807662964
+
+weather_CycleNetMixTune_336_192_ml2_lr0.0001_CycleNetMixTune_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.1939152181148529, mae:0.2448049634695053
+
+weather_CycleNetMixTune_336_192_ml2_lr0.0005_CycleNetMixTune_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.19784726202487946, mae:0.25059255957603455
+
+weather_CycleNetMixTune_336_192_ml2_lr0.001_CycleNetMixTune_custom_ftM_sl336_pl192_cycle144_mlp_seed2024  
+mse:0.1988648921251297, mae:0.2502715587615967
+
+ETTm1_CycleNetMixTune_336_192_ml1_lr0.0001_CycleNetMixTune_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.33195269107818604, mae:0.37180519104003906
+
+ETTm1_CycleNetMixTune_336_192_ml1_lr0.0005_CycleNetMixTune_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3433709144592285, mae:0.3784489333629608
+
+ETTm1_CycleNetMixTune_336_192_ml1_lr0.001_CycleNetMixTune_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.34700703620910645, mae:0.38129568099975586
+
+ETTm1_CycleNetMixTune_336_192_ml2_lr0.0001_CycleNetMixTune_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3307534456253052, mae:0.3711354732513428
+
+ETTm1_CycleNetMixTune_336_192_ml2_lr0.0005_CycleNetMixTune_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3438127934932709, mae:0.37767040729522705
+
+ETTm1_CycleNetMixTune_336_192_ml2_lr0.001_CycleNetMixTune_ETTm1_ftM_sl336_pl192_cycle96_mlp_seed2024  
+mse:0.3436373174190521, mae:0.38017791509628296
+

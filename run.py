@@ -36,6 +36,12 @@ parser.add_argument('--pred_len', type=int, default=96, help='prediction sequenc
 parser.add_argument('--cycle', type=int, default=24, help='cycle length')
 parser.add_argument('--model_type', type=str, default='mlp', help='model type, options: [linear, mlp]')
 parser.add_argument('--use_revin', type=int, default=1, help='1: use revin or 0: no revin')
+# CycleNetMix: gated channel-mixing branch
+parser.add_argument('--mix_hidden', type=int, default=128, help='hidden width of the channel-mixing MLP (CycleNetMix)')
+parser.add_argument('--mix_layers', type=int, default=1, help='number of stacked channel-mixing blocks (CycleNetMix)')
+parser.add_argument('--mix_dropout', type=float, default=0.1, help='dropout inside the channel-mixing MLP (CycleNetMix)')
+parser.add_argument('--mix_lag_window', type=int, default=4, help='number of past timesteps each mixing block can see, including the current one (CycleNetMixLag only; 1 = contemporaneous only)')
+parser.add_argument('--mix_rank', type=int, default=16, help='shared low-rank dimension for channel mixing (CycleNetMixLowRank only). Should be much smaller than enc_in for high-channel-count datasets.')
 
 # DLinear
 #parser.add_argument('--individual', action='store_true', default=False, help='DLinear: a linear layer for each variate(channel) individually')
@@ -88,7 +94,7 @@ parser.add_argument('--do_predict', action='store_true', help='whether to predic
 parser.add_argument('--num_workers', type=int, default=10, help='data loader num workers')
 parser.add_argument('--itr', type=int, default=1, help='experiments times')
 parser.add_argument('--train_epochs', type=int, default=30, help='train epochs')
-parser.add_argument('--batch_size', type=int, default=128, help='batch size of train input data')
+parser.add_argument('--batch_size', type=int, default=64, help='batch size of train input data')
 parser.add_argument('--patience', type=int, default=5, help='early stopping patience')
 parser.add_argument('--learning_rate', type=float, default=0.0001, help='optimizer learning rate')
 parser.add_argument('--des', type=str, default='test', help='exp description')
