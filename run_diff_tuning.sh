@@ -5,22 +5,25 @@ set -euo pipefail
 # ============================================================
 # CycleNetMix Hyperparameter Tuning
 #
-# Tune only:
+# Tune:
+#   mix_hidden
 #   mix_layers
 #   learning_rate
 #
 # Keep fixed:
-#   mix_hidden  = 64
 #   mix_dropout = 0.1
 #
-# 6 hyperparameter combinations total.
+# 3 hidden sizes
+# × 2 layer settings
+# × 3 learning rates
+# = 18 combinations
 # ============================================================
+
 
 model_type=mlp
 batch_size=64
 
-# Fixed channel-mixing settings
-mix_hidden=64
+# Fixed setting
 mix_dropout=0.1
 
 
@@ -38,20 +41,42 @@ declare -a datasets=(
 # HYPERPARAMETER COMBINATIONS
 #
 # Format:
-# mix_layers | learning_rate
 #
-# 2 mix-layer settings × 3 learning rates
-# = 6 combinations
+# mix_hidden | mix_layers | learning_rate
+#
+# 3 × 2 × 3 = 18 combinations
 # ============================================================
 
 declare -a combinations=(
-  "1|0.0001"
-  "1|0.0005"
-  "1|0.001"
 
-  "2|0.0001"
-  "2|0.0005"
-  "2|0.001"
+  # mix_hidden = 32
+  "32|1|0.0001"
+  "32|1|0.0005"
+  "32|1|0.001"
+
+  "32|2|0.0001"
+  "32|2|0.0005"
+  "32|2|0.001"
+
+
+  # mix_hidden = 64
+  "64|1|0.0001"
+  "64|1|0.0005"
+  "64|1|0.001"
+
+  "64|2|0.0001"
+  "64|2|0.0005"
+  "64|2|0.001"
+
+
+  # mix_hidden = 128
+  "128|1|0.0001"
+  "128|1|0.0005"
+  "128|1|0.001"
+
+  "128|2|0.0001"
+  "128|2|0.0005"
+  "128|2|0.001"
 )
 
 
@@ -79,6 +104,7 @@ for pred_len in 96 192; do
     for combination in "${combinations[@]}"; do
 
       IFS='|' read -r \
+        mix_hidden \
         mix_layers \
         learning_rate <<< "$combination"
 
@@ -86,7 +112,7 @@ for pred_len in 96 192; do
       echo "======================================================"
       echo "Dataset:       $data_name"
       echo "Prediction:    $pred_len"
-      echo "mix_hidden:    $mix_hidden (fixed)"
+      echo "mix_hidden:    $mix_hidden"
       echo "mix_layers:    $mix_layers"
       echo "mix_dropout:   $mix_dropout (fixed)"
       echo "learning_rate: $learning_rate"
@@ -97,7 +123,7 @@ for pred_len in 96 192; do
         --is_training 1 \
         --root_path ./dataset/ \
         --data_path "$data_path" \
-        --model_id "${data_name}_CycleNetMixTune_${seq_len}_${pred_len}_ml${mix_layers}_lr${learning_rate}" \
+        --model_id "${data_name}_CycleNetMixTune_${seq_len}_${pred_len}_mh${mix_hidden}_ml${mix_layers}_lr${learning_rate}" \
         --model CycleNetMixTune \
         --data "$data" \
         --features M \

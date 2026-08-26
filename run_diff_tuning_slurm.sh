@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=cyclenet_diff_tune
+#SBATCH --job-name=cyclenet_diff_tune2
 #SBATCH --partition=STUD
 #SBATCH --gres=gpu:1
 #SBATCH --mem=12G
-#SBATCH --output=diff_tune_%j.log
-#SBATCH --error=diff_tune_%j.err
+#SBATCH --output=diff_tune2_%j.log
+#SBATCH --error=diff_tune2_%j.err
 
 set -euo pipefail
 
