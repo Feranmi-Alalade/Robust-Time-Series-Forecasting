@@ -1,0 +1,13 @@
+dataset,model,horizon,lookback,hyperparameters,best_epoch,validation_mse,test_mse,test_mae,run_id
+Solar,CycleNetMix,96,720,layers1_lr0.0001,6,0.1366409,0.16520099,0.23682816,Solar_CycleNetMix_L720_H96_layers1_lr0.0001
+Solar,CycleNetMix,192,192,layers1_lr0.0001,10,0.1517399,0.18364796,0.24992368,Solar_CycleNetMix_L192_H192_layers1_lr0.0001
+Solar,CycleNetMix,336,720,layers2_lr0.0001,3,0.1648393,0.20039549,0.27351514,Solar_CycleNetMix_L720_H336_layers2_lr0.0001
+Solar,CycleNetMix,720,192,layers1_lr0.0001,11,0.1604466,0.20183127,0.26202112,Solar_CycleNetMix_L192_H720_layers1_lr0.0001
+Solar,CycleNetPairMix,96,192,mr0.6_lr0.0005,15,0.1335928,0.17381024,0.23648067,Solar_CycleNetPairMix_L192_H96_mr0.6_lr0.0005
+Solar,CycleNetPairMix,192,720,mr0.4_lr0.0001,26,0.1492264,0.18564335,0.24930622,Solar_CycleNetPairMix_L720_H192_mr0.4_lr0.0001
+Solar,CycleNetPairMix,336,720,mr0.4_lr0.0001,24,0.1576221,0.19493932,0.25442442,Solar_CycleNetPairMix_L720_H336_mr0.4_lr0.0001
+Solar,CycleNetPairMix,720,720,mr0.6_lr0.0001,27,0.1538594,0.20068508,0.26059532,Solar_CycleNetPairMix_L720_H720_mr0.6_lr0.0001
+Solar,CycleNetMixLowRank,96,720,rank32_layers1_lr0.0001,9,0.1356557,0.1641219,0.2360864,Solar_CycleNetMixLowRank_L720_H96_rank32_layers1_lr0.0001
+Solar,CycleNetMixLowRank,192,192,rank64_layers1_lr0.0001,18,0.1516098,0.18247043,0.24776128,Solar_CycleNetMixLowRank_L192_H192_rank64_layers1_lr0.0001
+Solar,CycleNetMixLowRank,336,720,rank16_layers1_lr0.0001,4,0.1633664,0.20015612,0.26402795,Solar_CycleNetMixLowRank_L720_H336_rank16_layers1_lr0.0001
+Solar,CycleNetMixLowRank,720,720,rank16_layers1_lr0.0001,5,0.1591785,0.20413278,0.26766804,Solar_CycleNetMixLowRank_L720_H720_rank16_layers1_lr0.0001

@@ -1,0 +1,13 @@
+dataset,model,horizon,lookback,hyperparameters,best_epoch,validation_mse,test_mse,test_mae,run_id
+ETTm1,CycleNetMix,96,192,layers1_lr0.001,19,0.3664291,0.29149842,0.34708861,ETTm1_CycleNetMix_L192_H96_layers1_lr0.001
+ETTm1,CycleNetMix,192,192,layers2_lr0.0005,10,0.4873215,0.33624727,0.37302721,ETTm1_CycleNetMix_L192_H192_layers2_lr0.0005
+ETTm1,CycleNetMix,336,192,layers2_lr0.0005,14,0.6251301,0.36751097,0.3921985,ETTm1_CycleNetMix_L192_H336_layers2_lr0.0005
+ETTm1,CycleNetMix,720,720,layers1_lr0.0001,6,0.9425545,0.43090186,0.42566898,ETTm1_CycleNetMix_L720_H720_layers1_lr0.0001
+ETTm1,CycleNetPairMix,96,192,mr0.2_lr0.002,15,0.3606323,0.2919226,0.34533617,ETTm1_CycleNetPairMix_L192_H96_mr0.2_lr0.002
+ETTm1,CycleNetPairMix,192,192,mr0.2_lr0.002,17,0.4791173,0.33271167,0.36945152,ETTm1_CycleNetPairMix_L192_H192_mr0.2_lr0.002
+ETTm1,CycleNetPairMix,336,192,mr0.2_lr0.002,11,0.6237394,0.369221,0.39458117,ETTm1_CycleNetPairMix_L192_H336_mr0.2_lr0.002
+ETTm1,CycleNetPairMix,720,720,mr0.2_lr0.0001,6,0.9444001,0.42960757,0.42353082,ETTm1_CycleNetPairMix_L720_H720_mr0.2_lr0.0001
+ETTm1,CycleNetMixLowRank,96,192,rank32_layers1_lr0.002,11,0.3616598,0.29854935,0.35275507,ETTm1_CycleNetMixLowRank_L192_H96_rank32_layers1_lr0.002
+ETTm1,CycleNetMixLowRank,192,192,rank16_layers2_lr0.0005,25,0.4833626,0.33340254,0.36992362,ETTm1_CycleNetMixLowRank_L192_H192_rank16_layers2_lr0.0005
+ETTm1,CycleNetMixLowRank,336,192,rank64_layers2_lr0.0005,12,0.6254357,0.36935133,0.3932018,ETTm1_CycleNetMixLowRank_L192_H336_rank64_layers2_lr0.0005
+ETTm1,CycleNetMixLowRank,720,720,rank16_layers2_lr0.0001,5,0.9415564,0.42988488,0.42402899,ETTm1_CycleNetMixLowRank_L720_H720_rank16_layers2_lr0.0001

@@ -1,0 +1,13 @@
+dataset,model,horizon,lookback,hyperparameters,best_epoch,validation_mse,test_mse,test_mae,run_id
+Weather,CycleNetMix,96,192,layers2_lr0.0005,25,0.3765414,0.15550384,0.20872323,Weather_CycleNetMix_L192_H96_layers2_lr0.0005
+Weather,CycleNetMix,192,720,layers2_lr0.0005,9,0.4368108,0.19506472,0.24799155,Weather_CycleNetMix_L720_H192_layers2_lr0.0005
+Weather,CycleNetMix,336,720,layers1_lr0.0005,4,0.5030511,0.2440569,0.28507042,Weather_CycleNetMix_L720_H336_layers1_lr0.0005
+Weather,CycleNetMix,720,720,layers2_lr0.0005,3,0.5955083,0.31245807,0.33421135,Weather_CycleNetMix_L720_H720_layers2_lr0.0005
+Weather,CycleNetPairMix,96,192,mr0.6_lr0.002,10,0.381104,0.15823963,0.21008758,Weather_CycleNetPairMix_L192_H96_mr0.6_lr0.002
+Weather,CycleNetPairMix,192,720,mr0.6_lr0.0005,10,0.4343898,0.19414169,0.24614315,Weather_CycleNetPairMix_L720_H192_mr0.6_lr0.0005
+Weather,CycleNetPairMix,336,720,mr0.6_lr0.001,5,0.4925132,0.24442823,0.2866298,Weather_CycleNetPairMix_L720_H336_mr0.6_lr0.001
+Weather,CycleNetPairMix,720,720,mr0.2_lr0.001,8,0.5883995,0.32246616,0.33793199,Weather_CycleNetPairMix_L720_H720_mr0.2_lr0.001
+Weather,CycleNetMixLowRank,96,192,rank16_layers2_lr0.002,12,0.3729676,0.15463245,0.20577642,Weather_CycleNetMixLowRank_L192_H96_rank16_layers2_lr0.002
+Weather,CycleNetMixLowRank,192,720,rank32_layers1_lr0.0005,11,0.4343875,0.19604674,0.24748777,Weather_CycleNetMixLowRank_L720_H192_rank32_layers1_lr0.0005
+Weather,CycleNetMixLowRank,336,720,rank16_layers1_lr0.0005,7,0.4974205,0.24409543,0.28272232,Weather_CycleNetMixLowRank_L720_H336_rank16_layers1_lr0.0005
+Weather,CycleNetMixLowRank,720,720,rank16_layers1_lr0.0005,5,0.5950194,0.31223646,0.33204556,Weather_CycleNetMixLowRank_L720_H720_rank16_layers1_lr0.0005
