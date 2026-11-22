@@ -1,0 +1,5 @@
+dataset,model,lookback,horizon,cycle,enc_in,batch_size,learning_rate,use_revin,seed,best_epoch,val_mse,test_mse,test_mae,source_config,run_id
+PEMS08,CycleNet,192,12,288,170,64,0.005,0,2024,11,0.0879552,0.0785062,0.18263973,CycleNet authors PEMS08 L96 parameters applied at L192,PEMS08_CycleNet_L192_H12_bs64_lr0p005_revin0_seed2024
+PEMS08,CycleNet,192,24,288,170,64,0.005,0,2024,7,0.1222609,0.10809763,0.2146218,CycleNet authors PEMS08 L96 parameters applied at L192,PEMS08_CycleNet_L192_H24_bs64_lr0p005_revin0_seed2024
+PEMS08,CycleNet,192,48,288,170,64,0.005,0,2024,7,0.1885193,0.16194202,0.24983735,CycleNet authors PEMS08 L96 parameters applied at L192,PEMS08_CycleNet_L192_H48_bs64_lr0p005_revin0_seed2024
+PEMS08,CycleNet,192,96,288,170,64,0.005,0,2024,15,0.2661153,0.2170525,0.27416947,CycleNet authors PEMS08 L96 parameters applied at L192,PEMS08_CycleNet_L192_H96_bs64_lr0p005_revin0_seed2024

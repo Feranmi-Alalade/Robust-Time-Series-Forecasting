@@ -1,0 +1,5 @@
+dataset,model,lookback,horizon,cycle,enc_in,batch_size,learning_rate,use_revin,seed,best_epoch,val_mse,test_mse,test_mae,source_config,run_id
+Solar,CycleNet,192,96,144,137,64,0.002,0,2024,5,0.1421291,0.1759485,0.24902076,CycleNet authors L336 parameters applied at L192,Solar_CycleNet_L192_H96_bs64_lr0p002_revin0_seed2024
+Solar,CycleNet,192,192,144,137,64,0.002,0,2024,6,0.1540672,0.20332621,0.25924852,CycleNet authors L336 parameters applied at L192,Solar_CycleNet_L192_H192_bs64_lr0p002_revin0_seed2024
+Solar,CycleNet,192,336,144,137,64,0.002,0,2024,18,0.1615467,0.20081177,0.25378069,CycleNet authors L336 parameters applied at L192,Solar_CycleNet_L192_H336_bs64_lr0p002_revin0_seed2024
+Solar,CycleNet,192,720,144,137,64,0.002,0,2024,10,0.1585487,0.21112463,0.2629194,CycleNet authors L336 parameters applied at L192,Solar_CycleNet_L192_H720_bs64_lr0p002_revin0_seed2024

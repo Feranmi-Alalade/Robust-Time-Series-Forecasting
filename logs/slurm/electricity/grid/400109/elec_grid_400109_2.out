@@ -1,0 +1,169 @@
+Python: /home/alalade/CycleNet/venv/bin/python
+Electricity | L=96 H=96 | MixLowRank | 48 trials
+Dependency: /home/alalade/CycleNet/dependency_scores/Electricity_dependency.npy
+[1/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank16_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank16_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank16_layers1_seed2024 | Val MSE=0.12749581 | Test MSE=0.14986710 | Test MAE=0.24578042
+SUMMARY: 3/1408 trials complete; 0/48 groups finalized
+[2/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank16_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank16_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank16_layers2_seed2024 | Val MSE=0.12699341 | Test MSE=0.14901081 | Test MAE=0.24525709
+SUMMARY: 7/1408 trials complete; 0/48 groups finalized
+[3/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank32_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank32_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank32_layers1_seed2024 | Val MSE=0.12638264 | Test MSE=0.14856935 | Test MAE=0.24517752
+SUMMARY: 12/1408 trials complete; 0/48 groups finalized
+[4/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank32_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank32_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank32_layers2_seed2024 | Val MSE=0.12587497 | Test MSE=0.14815415 | Test MAE=0.24560736
+SUMMARY: 19/1408 trials complete; 0/48 groups finalized
+[5/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank64_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank64_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank64_layers1_seed2024 | Val MSE=0.12583349 | Test MSE=0.14825363 | Test MAE=0.24526568
+SUMMARY: 25/1408 trials complete; 0/48 groups finalized
+[6/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank64_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank64_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0001_rank64_layers2_seed2024 | Val MSE=0.12594471 | Test MSE=0.14808960 | Test MAE=0.24727532
+SUMMARY: 30/1408 trials complete; 0/48 groups finalized
+[7/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank16_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank16_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank16_layers1_seed2024 | Val MSE=0.12135714 | Test MSE=0.14278230 | Test MAE=0.24064441
+SUMMARY: 32/1408 trials complete; 0/48 groups finalized
+[8/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank16_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank16_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank16_layers2_seed2024 | Val MSE=0.12034677 | Test MSE=0.14650919 | Test MAE=0.24503337
+SUMMARY: 37/1408 trials complete; 0/48 groups finalized
+[9/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank32_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank32_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank32_layers1_seed2024 | Val MSE=0.11972108 | Test MSE=0.14674541 | Test MAE=0.24486645
+SUMMARY: 41/1408 trials complete; 0/48 groups finalized
+[10/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank32_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank32_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank32_layers2_seed2024 | Val MSE=0.11956706 | Test MSE=0.14772758 | Test MAE=0.24683739
+SUMMARY: 48/1408 trials complete; 1/48 groups finalized
+[11/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank64_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank64_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank64_layers1_seed2024 | Val MSE=0.11981933 | Test MSE=0.14832947 | Test MAE=0.24802561
+SUMMARY: 51/1408 trials complete; 1/48 groups finalized
+[12/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank64_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank64_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p0005_rank64_layers2_seed2024 | Val MSE=0.11980041 | Test MSE=0.14608154 | Test MAE=0.24602412
+SUMMARY: 56/1408 trials complete; 1/48 groups finalized
+[13/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank16_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank16_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank16_layers1_seed2024 | Val MSE=0.12144923 | Test MSE=0.14842419 | Test MAE=0.24608232
+SUMMARY: 58/1408 trials complete; 2/48 groups finalized
+[14/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank16_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank16_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank16_layers2_seed2024 | Val MSE=0.12049667 | Test MSE=0.14591792 | Test MAE=0.24401645
+SUMMARY: 60/1408 trials complete; 2/48 groups finalized
+[15/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank32_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank32_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank32_layers1_seed2024 | Val MSE=0.12058920 | Test MSE=0.14748992 | Test MAE=0.24656934
+SUMMARY: 63/1408 trials complete; 2/48 groups finalized
+[16/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank32_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank32_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank32_layers2_seed2024 | Val MSE=0.12021152 | Test MSE=0.14901163 | Test MAE=0.24822724
+SUMMARY: 65/1408 trials complete; 2/48 groups finalized
+[17/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank64_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank64_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank64_layers1_seed2024 | Val MSE=0.12017890 | Test MSE=0.14435722 | Test MAE=0.24378847
+SUMMARY: 67/1408 trials complete; 2/48 groups finalized
+[18/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank64_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank64_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p001_rank64_layers2_seed2024 | Val MSE=0.12111613 | Test MSE=0.14534152 | Test MAE=0.24593970
+SUMMARY: 69/1408 trials complete; 2/48 groups finalized
+[19/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank16_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank16_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank16_layers1_seed2024 | Val MSE=0.12000421 | Test MSE=0.14697041 | Test MAE=0.24512544
+SUMMARY: 72/1408 trials complete; 2/48 groups finalized
+[20/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank16_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank16_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank16_layers2_seed2024 | Val MSE=0.12100146 | Test MSE=0.14547414 | Test MAE=0.24454701
+SUMMARY: 73/1408 trials complete; 2/48 groups finalized
+[21/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank32_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank32_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank32_layers1_seed2024 | Val MSE=0.12032459 | Test MSE=0.14833599 | Test MAE=0.24677469
+SUMMARY: 76/1408 trials complete; 2/48 groups finalized
+[22/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank32_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank32_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank32_layers2_seed2024 | Val MSE=0.12270664 | Test MSE=0.14964500 | Test MAE=0.24903582
+SUMMARY: 78/1408 trials complete; 2/48 groups finalized
+[23/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank64_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank64_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank64_layers1_seed2024 | Val MSE=0.12064091 | Test MSE=0.14747256 | Test MAE=0.24792999
+SUMMARY: 80/1408 trials complete; 2/48 groups finalized
+[24/48] TRAIN Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank64_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank64_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs32_lr0p002_rank64_layers2_seed2024 | Val MSE=0.12149099 | Test MSE=0.14705572 | Test MAE=0.24700381
+SUMMARY: 82/1408 trials complete; 2/48 groups finalized
+[25/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank16_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank16_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank16_layers1_seed2024 | Val MSE=0.14171077 | Test MSE=0.16383220 | Test MAE=0.25851744
+SUMMARY: 85/1408 trials complete; 2/48 groups finalized
+[26/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank16_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank16_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank16_layers2_seed2024 | Val MSE=0.13816834 | Test MSE=0.16033331 | Test MAE=0.25618237
+SUMMARY: 88/1408 trials complete; 2/48 groups finalized
+[27/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank32_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank32_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank32_layers1_seed2024 | Val MSE=0.13807200 | Test MSE=0.16018869 | Test MAE=0.25603098
+SUMMARY: 92/1408 trials complete; 2/48 groups finalized
+[28/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank32_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank32_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank32_layers2_seed2024 | Val MSE=0.13684489 | Test MSE=0.15909284 | Test MAE=0.25576687
+SUMMARY: 96/1408 trials complete; 2/48 groups finalized
+[29/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank64_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank64_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank64_layers1_seed2024 | Val MSE=0.13674472 | Test MSE=0.15920559 | Test MAE=0.25559419
+SUMMARY: 100/1408 trials complete; 3/48 groups finalized
+[30/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank64_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank64_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0001_rank64_layers2_seed2024 | Val MSE=0.13447233 | Test MSE=0.15771015 | Test MAE=0.25606829
+SUMMARY: 106/1408 trials complete; 3/48 groups finalized
+[31/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank16_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank16_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank16_layers1_seed2024 | Val MSE=0.12130471 | Test MSE=0.14396018 | Test MAE=0.24173646
+SUMMARY: 114/1408 trials complete; 3/48 groups finalized
+[32/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank16_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank16_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank16_layers2_seed2024 | Val MSE=0.12186832 | Test MSE=0.14520763 | Test MAE=0.24406326
+SUMMARY: 120/1408 trials complete; 3/48 groups finalized
+[33/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank32_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank32_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank32_layers1_seed2024 | Val MSE=0.12100254 | Test MSE=0.14422862 | Test MAE=0.24259916
+SUMMARY: 126/1408 trials complete; 3/48 groups finalized
+[34/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank32_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank32_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank32_layers2_seed2024 | Val MSE=0.12135604 | Test MSE=0.14426526 | Test MAE=0.24342497
+SUMMARY: 131/1408 trials complete; 4/48 groups finalized
+[35/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank64_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank64_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank64_layers1_seed2024 | Val MSE=0.12149599 | Test MSE=0.14505647 | Test MAE=0.24459182
+SUMMARY: 136/1408 trials complete; 4/48 groups finalized
+[36/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank64_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank64_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p0005_rank64_layers2_seed2024 | Val MSE=0.12080304 | Test MSE=0.14390832 | Test MAE=0.24378437
+SUMMARY: 140/1408 trials complete; 4/48 groups finalized
+[37/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank16_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank16_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank16_layers1_seed2024 | Val MSE=0.11999174 | Test MSE=0.14474933 | Test MAE=0.24199164
+SUMMARY: 145/1408 trials complete; 4/48 groups finalized
+[38/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank16_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank16_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank16_layers2_seed2024 | Val MSE=0.12013507 | Test MSE=0.14509150 | Test MAE=0.24341716
+SUMMARY: 151/1408 trials complete; 4/48 groups finalized
+[39/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank32_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank32_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank32_layers1_seed2024 | Val MSE=0.12166757 | Test MSE=0.14482106 | Test MAE=0.24270301
+SUMMARY: 154/1408 trials complete; 4/48 groups finalized
+[40/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank32_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank32_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank32_layers2_seed2024 | Val MSE=0.12082371 | Test MSE=0.14512084 | Test MAE=0.24434756
+SUMMARY: 158/1408 trials complete; 4/48 groups finalized
+[41/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank64_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank64_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank64_layers1_seed2024 | Val MSE=0.12060279 | Test MSE=0.14601129 | Test MAE=0.24492505
+SUMMARY: 162/1408 trials complete; 4/48 groups finalized
+[42/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank64_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank64_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p001_rank64_layers2_seed2024 | Val MSE=0.11987758 | Test MSE=0.14754736 | Test MAE=0.24697948
+SUMMARY: 166/1408 trials complete; 4/48 groups finalized
+[43/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank16_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank16_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank16_layers1_seed2024 | Val MSE=0.12108532 | Test MSE=0.14659333 | Test MAE=0.24534455
+SUMMARY: 171/1408 trials complete; 4/48 groups finalized
+[44/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank16_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank16_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank16_layers2_seed2024 | Val MSE=0.11946246 | Test MSE=0.14508410 | Test MAE=0.24393749
+SUMMARY: 174/1408 trials complete; 4/48 groups finalized
+[45/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank32_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank32_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank32_layers1_seed2024 | Val MSE=0.12036867 | Test MSE=0.14604947 | Test MAE=0.24438038
+SUMMARY: 177/1408 trials complete; 4/48 groups finalized
+[46/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank32_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank32_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank32_layers2_seed2024 | Val MSE=0.12056220 | Test MSE=0.14940105 | Test MAE=0.24972722
+SUMMARY: 179/1408 trials complete; 4/48 groups finalized
+[47/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank64_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank64_layers1_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank64_layers1_seed2024 | Val MSE=0.12019781 | Test MSE=0.14493333 | Test MAE=0.24379630
+SUMMARY: 181/1408 trials complete; 4/48 groups finalized
+[48/48] TRAIN Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank64_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank64_layers2_seed2024.log
+VERIFIED: Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank64_layers2_seed2024 | Val MSE=0.12110139 | Test MSE=0.14840765 | Test MAE=0.24852282
+SUMMARY: 184/1408 trials complete; 5/48 groups finalized
+FINAL WINNER (LOWEST VALIDATION MSE):
+{
+  "dataset": "Electricity",
+  "model": "MixLowRank",
+  "lookback": 96,
+  "horizon": 96,
+  "batch_size": 64,
+  "learning_rate": "0.002",
+  "mix_layers": 2,
+  "mix_ratio": null,
+  "mix_rank": 16,
+  "mix_hidden": 128,
+  "mix_dropout": 0.1,
+  "seed": 2024,
+  "run_id": "Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank16_layers2_seed2024",
+  "best_epoch": 10,
+  "validation_mse": 0.11946246,
+  "test_mse": 0.1450841,
+  "test_mae": 0.24393749,
+  "log": "/home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_MixLowRank_L96_H96_bs64_lr0p002_rank16_layers2_seed2024.log"
+}
+SUMMARY: 184/1408 trials complete; 5/48 groups finalized

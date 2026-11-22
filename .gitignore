@@ -170,3 +170,30 @@ Thumbs.db
 # uv.lock
 # Small CSV result summaries
 # Research documentation
+
+
+# Local-only experiment and reference folders
+/Figures/
+/acf_plot.ipynb
+/ettm1_grid_results*/
+/weather_grid_results*/
+/guided_optuna_results/
+/optuna_results/
+/mi_srp_results/
+/low_rank_slurm/
+/old_logs/
+/old_slurm/
+/paper_reproduction/
+
+# Publish benchmark matrices, result tables, and organized logs.
+!/dependency_scores/*_dependency.npy
+!/dependency_scores/*_dependency_L*.npy
+!/results/
+/results/**
+!/results/**/
+!/results/**/*.csv
+!/logs/
+!/logs/**/
+!/logs/**/*.log
+!/logs/**/*.out
+!/logs/**/*.err

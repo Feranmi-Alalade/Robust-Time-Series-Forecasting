@@ -1,0 +1,89 @@
+Python 3.12.3
+
+===== ETTh1 PairMix dependency =====
+data=ETTh1.csv | C=7 | cycle=24 | L=336 | H=96 | RevIN=1
+Output: /home/alalade/CycleNet/dependency_scores/ETTh1_dependency.npy
+Training an independent CycleNet/MLP checkpoint for ETTh1 ...
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_CycleNet_dependency_L336_H96_RevIN1', model='CycleNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='/home/alalade/CycleNet/dependency_checkpoints/ETTh1/', seq_len=336, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, mix_hidden=128, mix_layers=1, mix_dropout=0.1, mix_lag_window=4, mix_rank=16, dependency_score_path=None, mix_ratio=0.4, trend_kernel=25, trend_layers=1, trend_kernels=[25, 49, 97], fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, period_len=24, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=4, itr=1, train_epochs=30, batch_size=64, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : ETTh1_CycleNet_dependency_L336_H96_RevIN1_CycleNet_ETTh1_ftM_sl336_pl96_cycle24_mlp_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8209
+val 2785
+	iters: 100, epoch: 1 | loss: 0.4510886
+	speed: 0.0339s/iter; left time: 127.0055s
+Epoch: 1 cost time: 1.9544565677642822
+Epoch: 1, Steps: 128 | Train Loss: 0.5042071 Val MSE: 0.9307480 Val MAE: 0.6740409
+Validation loss decreased (inf --> 0.930748).  Saving model ...
+Updating learning rate to 0.001
+	iters: 100, epoch: 2 | loss: 0.3626585
+	speed: 0.0210s/iter; left time: 75.7201s
+Epoch: 2 cost time: 1.53956937789917
+Epoch: 2, Steps: 128 | Train Loss: 0.3609289 Val MSE: 0.6965604 Val MAE: 0.5696128
+Validation loss decreased (0.930748 --> 0.696560).  Saving model ...
+Updating learning rate to 0.001
+	iters: 100, epoch: 3 | loss: 0.3392380
+	speed: 0.0199s/iter; left time: 69.4035s
+Epoch: 3 cost time: 1.4875946044921875
+Epoch: 3, Steps: 128 | Train Loss: 0.3307418 Val MSE: 0.7019683 Val MAE: 0.5606540
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.001
+	iters: 100, epoch: 4 | loss: 0.3126532
+	speed: 0.0198s/iter; left time: 66.3567s
+Epoch: 4 cost time: 1.4778516292572021
+Epoch: 4, Steps: 128 | Train Loss: 0.3202521 Val MSE: 0.7549453 Val MAE: 0.5847040
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0008
+	iters: 100, epoch: 5 | loss: 0.2886203
+	speed: 0.0205s/iter; left time: 66.2523s
+Epoch: 5 cost time: 1.5721545219421387
+Epoch: 5, Steps: 128 | Train Loss: 0.3069304 Val MSE: 0.7451095 Val MAE: 0.5757095
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0006400000000000002
+	iters: 100, epoch: 6 | loss: 0.2899599
+	speed: 0.0207s/iter; left time: 64.3027s
+Epoch: 6 cost time: 1.5530493259429932
+Epoch: 6, Steps: 128 | Train Loss: 0.2939690 Val MSE: 0.7553092 Val MAE: 0.5863013
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0005120000000000001
+	iters: 100, epoch: 7 | loss: 0.2561936
+	speed: 0.0205s/iter; left time: 60.8669s
+Epoch: 7 cost time: 1.5763764381408691
+Epoch: 7, Steps: 128 | Train Loss: 0.2845418 Val MSE: 0.7597778 Val MAE: 0.5812630
+EarlyStopping counter: 5 out of 5
+Early stopping
+
+======================================================
+BEST VALIDATION CHECKPOINT
+======================================================
+Best epoch:          2
+Validation MSE:      0.69525257
+Validation MAE:      0.56916209
+======================================================
+
+>>>>>>>testing : ETTh1_CycleNet_dependency_L336_H96_RevIN1_CycleNet_ETTh1_ftM_sl336_pl96_cycle24_mlp_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+
+======================================================
+FINAL TEST RESULTS
+======================================================
+MSE: 0.38497746
+MAE: 0.40678924
+======================================================
+
+Using CycleNet checkpoint: /home/alalade/CycleNet/dependency_checkpoints/ETTh1/ETTh1_CycleNet_dependency_L336_H96_RevIN1_CycleNet_ETTh1_ftM_sl336_pl96_cycle24_mlp_seed2024/checkpoint.pth
+Using device: cuda
+train 8209
+Residual matrix: (2752512, 7)
+Dependency matrix: (7, 7)
+Saved dependency scores to: /home/alalade/CycleNet/dependency_scores/ETTh1_dependency.tmp_382299_1.npy
+
+Matrix: /home/alalade/CycleNet/dependency_scores/ETTh1_dependency.npy
+Shape: (7, 7)
+Min/max: 0.0 0.9626948833465576
+Mean off diagonal: 0.2610994279384613
+Symmetric: True
+Diagonal zero: True
+Verification: PASSED
+-rw-r--r-- 1 alalade students 324 Nov 16 12:40 /home/alalade/CycleNet/dependency_scores/ETTh1_dependency.npy
+DONE: ETTh1

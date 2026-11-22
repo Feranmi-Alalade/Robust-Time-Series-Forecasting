@@ -1,0 +1,5 @@
+dataset,model,lookback,horizon,cycle,enc_in,batch_size,learning_rate,use_revin,seed,best_epoch,val_mse,test_mse,test_mae,source_config,run_id
+Weather,CycleNet,192,96,144,21,256,0.002,1,2024,22,0.3817283,0.1545395,0.2019559,CycleNet authors L336 parameters applied at L192,Weather_CycleNet_L192_H96_bs256_lr0p002_revin1_seed2024
+Weather,CycleNet,192,192,144,21,256,0.002,1,2024,11,0.4462443,0.19607612,0.24209154,CycleNet authors L336 parameters applied at L192,Weather_CycleNet_L192_H192_bs256_lr0p002_revin1_seed2024
+Weather,CycleNet,192,336,144,21,256,0.002,1,2024,19,0.5280786,0.25049123,0.28489193,CycleNet authors L336 parameters applied at L192,Weather_CycleNet_L192_H336_bs256_lr0p002_revin1_seed2024
+Weather,CycleNet,192,720,144,21,256,0.002,1,2024,27,0.6500463,0.33267507,0.34325564,CycleNet authors L336 parameters applied at L192,Weather_CycleNet_L192_H720_bs256_lr0p002_revin1_seed2024

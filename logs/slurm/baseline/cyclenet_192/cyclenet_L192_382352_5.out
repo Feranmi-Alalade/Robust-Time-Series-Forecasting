@@ -1,0 +1,279 @@
+=============================================================
+Dataset=ETTh1 | model=CycleNet MLP | L=192 | seed=2024
+Horizons=96 192 336 720 | cycle=24 | channels=7
+batch=256 | lr=0.002 | RevIN=1 | array_id=5
+Python=/home/alalade/CycleNet/venv/bin/python
+Results: /home/alalade/CycleNet/fixed_lookback_grid/cyclenet_L192_baselines/ETTh1
+=============================================================
+=============================================================
+TRAIN: ETTh1_CycleNet_L192_H96_bs256_lr0p002_revin1_seed2024
+=============================================================
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_CycleNet_L192_H96_bs256_lr0p002_revin1_seed2024', model='CycleNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='/home/alalade/CycleNet/fixed_lookback_grid/cyclenet_L192_baselines/ETTh1/checkpoints/ETTh1_CycleNet_L192_H96_bs256_lr0p002_revin1_seed2024/', seq_len=192, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, mix_hidden=128, mix_layers=1, mix_dropout=0.1, mix_lag_window=4, mix_rank=16, dependency_score_path=None, mix_ratio=0.4, trend_kernel=25, trend_layers=1, trend_kernels=[25, 49, 97], fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, period_len=24, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=4, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.002, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : ETTh1_CycleNet_L192_H96_bs256_lr0p002_revin1_seed2024_CycleNet_ETTh1_ftM_sl192_pl96_cycle24_mlp_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8353
+val 2785
+Epoch: 1 cost time: 0.5172083377838135
+Epoch: 1, Steps: 32 | Train Loss: 0.5389229 Val MSE: 1.0766097 Val MAE: 0.7256526
+Validation loss decreased (inf --> 1.076610).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 2 cost time: 0.3348202705383301
+Epoch: 2, Steps: 32 | Train Loss: 0.4309709 Val MSE: 0.7649448 Val MAE: 0.5955932
+Validation loss decreased (1.076610 --> 0.764945).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 3 cost time: 0.4360525608062744
+Epoch: 3, Steps: 32 | Train Loss: 0.3631550 Val MSE: 0.7257311 Val MAE: 0.5684870
+Validation loss decreased (0.764945 --> 0.725731).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 4 cost time: 0.5552947521209717
+Epoch: 4, Steps: 32 | Train Loss: 0.3415373 Val MSE: 0.7120403 Val MAE: 0.5582586
+Validation loss decreased (0.725731 --> 0.712040).  Saving model ...
+Updating learning rate to 0.0016
+Epoch: 5 cost time: 0.348191499710083
+Epoch: 5, Steps: 32 | Train Loss: 0.3342472 Val MSE: 0.7242384 Val MAE: 0.5646691
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0012800000000000003
+Epoch: 6 cost time: 0.40482378005981445
+Epoch: 6, Steps: 32 | Train Loss: 0.3285491 Val MSE: 0.7235615 Val MAE: 0.5632860
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0010240000000000002
+Epoch: 7 cost time: 0.559180498123169
+Epoch: 7, Steps: 32 | Train Loss: 0.3247522 Val MSE: 0.7186049 Val MAE: 0.5594488
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0008192000000000002
+Epoch: 8 cost time: 0.39780712127685547
+Epoch: 8, Steps: 32 | Train Loss: 0.3214697 Val MSE: 0.7177910 Val MAE: 0.5589600
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0006553600000000002
+Epoch: 9 cost time: 1.0750830173492432
+Epoch: 9, Steps: 32 | Train Loss: 0.3201962 Val MSE: 0.7228366 Val MAE: 0.5593455
+EarlyStopping counter: 5 out of 5
+Early stopping
+
+======================================================
+BEST VALIDATION CHECKPOINT
+======================================================
+Best epoch:          4
+Validation MSE:      0.71017577
+Validation MAE:      0.55793272
+======================================================
+
+>>>>>>>testing : ETTh1_CycleNet_L192_H96_bs256_lr0p002_revin1_seed2024_CycleNet_ETTh1_ftM_sl192_pl96_cycle24_mlp_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+
+======================================================
+FINAL TEST RESULTS
+======================================================
+MSE: 0.39267981
+MAE: 0.40411410
+======================================================
+
+VERIFIED ETTh1_CycleNet_L192_H96_bs256_lr0p002_revin1_seed2024: best Val MSE=0.7120403 (epoch 4), Test MSE=0.3926798, Test MAE=0.4041141
+ETTh1: 1/4 completed for seed 2024
+=============================================================
+TRAIN: ETTh1_CycleNet_L192_H192_bs256_lr0p002_revin1_seed2024
+=============================================================
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_CycleNet_L192_H192_bs256_lr0p002_revin1_seed2024', model='CycleNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='/home/alalade/CycleNet/fixed_lookback_grid/cyclenet_L192_baselines/ETTh1/checkpoints/ETTh1_CycleNet_L192_H192_bs256_lr0p002_revin1_seed2024/', seq_len=192, label_len=0, pred_len=192, cycle=24, model_type='mlp', use_revin=1, mix_hidden=128, mix_layers=1, mix_dropout=0.1, mix_lag_window=4, mix_rank=16, dependency_score_path=None, mix_ratio=0.4, trend_kernel=25, trend_layers=1, trend_kernels=[25, 49, 97], fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, period_len=24, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=4, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.002, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : ETTh1_CycleNet_L192_H192_bs256_lr0p002_revin1_seed2024_CycleNet_ETTh1_ftM_sl192_pl192_cycle24_mlp_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8257
+val 2689
+Epoch: 1 cost time: 0.9171087741851807
+Epoch: 1, Steps: 32 | Train Loss: 0.5832294 Val MSE: 1.3223809 Val MAE: 0.8072638
+Validation loss decreased (inf --> 1.322381).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 2 cost time: 0.48905301094055176
+Epoch: 2, Steps: 32 | Train Loss: 0.4774190 Val MSE: 1.0551571 Val MAE: 0.6989978
+Validation loss decreased (1.322381 --> 1.055157).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 3 cost time: 0.3474140167236328
+Epoch: 3, Steps: 32 | Train Loss: 0.4177371 Val MSE: 0.9911032 Val MAE: 0.6602227
+Validation loss decreased (1.055157 --> 0.991103).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 4 cost time: 0.5443930625915527
+Epoch: 4, Steps: 32 | Train Loss: 0.3988930 Val MSE: 0.9879601 Val MAE: 0.6592658
+Validation loss decreased (0.991103 --> 0.987960).  Saving model ...
+Updating learning rate to 0.0016
+Epoch: 5 cost time: 0.6688010692596436
+Epoch: 5, Steps: 32 | Train Loss: 0.3898967 Val MSE: 0.9875840 Val MAE: 0.6574714
+Validation loss decreased (0.987960 --> 0.987584).  Saving model ...
+Updating learning rate to 0.0012800000000000003
+Epoch: 6 cost time: 0.6300313472747803
+Epoch: 6, Steps: 32 | Train Loss: 0.3839832 Val MSE: 1.0041789 Val MAE: 0.6597482
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0010240000000000002
+Epoch: 7 cost time: 0.3933374881744385
+Epoch: 7, Steps: 32 | Train Loss: 0.3790011 Val MSE: 1.0101044 Val MAE: 0.6632637
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0008192000000000002
+Epoch: 8 cost time: 0.4448068141937256
+Epoch: 8, Steps: 32 | Train Loss: 0.3745334 Val MSE: 1.0246078 Val MAE: 0.6683434
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0006553600000000002
+Epoch: 9 cost time: 0.38393735885620117
+Epoch: 9, Steps: 32 | Train Loss: 0.3714554 Val MSE: 1.0395793 Val MAE: 0.6711160
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0005242880000000002
+Epoch: 10 cost time: 0.44200992584228516
+Epoch: 10, Steps: 32 | Train Loss: 0.3689996 Val MSE: 1.0333816 Val MAE: 0.6702229
+EarlyStopping counter: 5 out of 5
+Early stopping
+
+======================================================
+BEST VALIDATION CHECKPOINT
+======================================================
+Best epoch:          5
+Validation MSE:      0.99039861
+Validation MAE:      0.65860288
+======================================================
+
+>>>>>>>testing : ETTh1_CycleNet_L192_H192_bs256_lr0p002_revin1_seed2024_CycleNet_ETTh1_ftM_sl192_pl192_cycle24_mlp_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2689
+
+======================================================
+FINAL TEST RESULTS
+======================================================
+MSE: 0.43160215
+MAE: 0.42536169
+======================================================
+
+VERIFIED ETTh1_CycleNet_L192_H192_bs256_lr0p002_revin1_seed2024: best Val MSE=0.9875840 (epoch 5), Test MSE=0.4316022, Test MAE=0.4253617
+ETTh1: 2/4 completed for seed 2024
+=============================================================
+TRAIN: ETTh1_CycleNet_L192_H336_bs256_lr0p002_revin1_seed2024
+=============================================================
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_CycleNet_L192_H336_bs256_lr0p002_revin1_seed2024', model='CycleNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='/home/alalade/CycleNet/fixed_lookback_grid/cyclenet_L192_baselines/ETTh1/checkpoints/ETTh1_CycleNet_L192_H336_bs256_lr0p002_revin1_seed2024/', seq_len=192, label_len=0, pred_len=336, cycle=24, model_type='mlp', use_revin=1, mix_hidden=128, mix_layers=1, mix_dropout=0.1, mix_lag_window=4, mix_rank=16, dependency_score_path=None, mix_ratio=0.4, trend_kernel=25, trend_layers=1, trend_kernels=[25, 49, 97], fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, period_len=24, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=4, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.002, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : ETTh1_CycleNet_L192_H336_bs256_lr0p002_revin1_seed2024_CycleNet_ETTh1_ftM_sl192_pl336_cycle24_mlp_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8113
+val 2545
+Epoch: 1 cost time: 0.8183131217956543
+Epoch: 1, Steps: 31 | Train Loss: 0.6333247 Val MSE: 1.5412029 Val MAE: 0.8786768
+Validation loss decreased (inf --> 1.541203).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 2 cost time: 0.7653460502624512
+Epoch: 2, Steps: 31 | Train Loss: 0.5330493 Val MSE: 1.2878003 Val MAE: 0.7828553
+Validation loss decreased (1.541203 --> 1.287800).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 3 cost time: 0.35938119888305664
+Epoch: 3, Steps: 31 | Train Loss: 0.4743096 Val MSE: 1.2407648 Val MAE: 0.7533599
+Validation loss decreased (1.287800 --> 1.240765).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 4 cost time: 0.6004095077514648
+Epoch: 4, Steps: 31 | Train Loss: 0.4563237 Val MSE: 1.2347909 Val MAE: 0.7504856
+Validation loss decreased (1.240765 --> 1.234791).  Saving model ...
+Updating learning rate to 0.0016
+Epoch: 5 cost time: 0.6159346103668213
+Epoch: 5, Steps: 31 | Train Loss: 0.4456305 Val MSE: 1.2608094 Val MAE: 0.7559138
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0012800000000000003
+Epoch: 6 cost time: 0.6611700057983398
+Epoch: 6, Steps: 31 | Train Loss: 0.4374563 Val MSE: 1.2735965 Val MAE: 0.7578476
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0010240000000000002
+Epoch: 7 cost time: 0.591083288192749
+Epoch: 7, Steps: 31 | Train Loss: 0.4308223 Val MSE: 1.2902311 Val MAE: 0.7635727
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0008192000000000002
+Epoch: 8 cost time: 0.37106847763061523
+Epoch: 8, Steps: 31 | Train Loss: 0.4272633 Val MSE: 1.3000342 Val MAE: 0.7652021
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0006553600000000002
+Epoch: 9 cost time: 0.44621968269348145
+Epoch: 9, Steps: 31 | Train Loss: 0.4241972 Val MSE: 1.3244121 Val MAE: 0.7721176
+EarlyStopping counter: 5 out of 5
+Early stopping
+
+======================================================
+BEST VALIDATION CHECKPOINT
+======================================================
+Best epoch:          4
+Validation MSE:      1.23498926
+Validation MAE:      0.75050438
+======================================================
+
+>>>>>>>testing : ETTh1_CycleNet_L192_H336_bs256_lr0p002_revin1_seed2024_CycleNet_ETTh1_ftM_sl192_pl336_cycle24_mlp_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2545
+
+======================================================
+FINAL TEST RESULTS
+======================================================
+MSE: 0.46381193
+MAE: 0.44500843
+======================================================
+
+VERIFIED ETTh1_CycleNet_L192_H336_bs256_lr0p002_revin1_seed2024: best Val MSE=1.2347909 (epoch 4), Test MSE=0.4638119, Test MAE=0.4450084
+ETTh1: 3/4 completed for seed 2024
+=============================================================
+TRAIN: ETTh1_CycleNet_L192_H720_bs256_lr0p002_revin1_seed2024
+=============================================================
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_CycleNet_L192_H720_bs256_lr0p002_revin1_seed2024', model='CycleNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='/home/alalade/CycleNet/fixed_lookback_grid/cyclenet_L192_baselines/ETTh1/checkpoints/ETTh1_CycleNet_L192_H720_bs256_lr0p002_revin1_seed2024/', seq_len=192, label_len=0, pred_len=720, cycle=24, model_type='mlp', use_revin=1, mix_hidden=128, mix_layers=1, mix_dropout=0.1, mix_lag_window=4, mix_rank=16, dependency_score_path=None, mix_ratio=0.4, trend_kernel=25, trend_layers=1, trend_kernels=[25, 49, 97], fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, period_len=24, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=4, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.002, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : ETTh1_CycleNet_L192_H720_bs256_lr0p002_revin1_seed2024_CycleNet_ETTh1_ftM_sl192_pl720_cycle24_mlp_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7729
+val 2161
+Epoch: 1 cost time: 0.7056076526641846
+Epoch: 1, Steps: 30 | Train Loss: 0.7394711 Val MSE: 1.7804744 Val MAE: 0.9534757
+Validation loss decreased (inf --> 1.780474).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 2 cost time: 0.437713623046875
+Epoch: 2, Steps: 30 | Train Loss: 0.6414705 Val MSE: 1.5690978 Val MAE: 0.8722047
+Validation loss decreased (1.780474 --> 1.569098).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 3 cost time: 1.049121379852295
+Epoch: 3, Steps: 30 | Train Loss: 0.5865011 Val MSE: 1.5200437 Val MAE: 0.8436996
+Validation loss decreased (1.569098 --> 1.520044).  Saving model ...
+Updating learning rate to 0.002
+Epoch: 4 cost time: 1.047757625579834
+Epoch: 4, Steps: 30 | Train Loss: 0.5619114 Val MSE: 1.5170487 Val MAE: 0.8368266
+Validation loss decreased (1.520044 --> 1.517049).  Saving model ...
+Updating learning rate to 0.0016
+Epoch: 5 cost time: 0.39612889289855957
+Epoch: 5, Steps: 30 | Train Loss: 0.5408150 Val MSE: 1.5574113 Val MAE: 0.8425750
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0012800000000000003
+Epoch: 6 cost time: 0.46734070777893066
+Epoch: 6, Steps: 30 | Train Loss: 0.5283961 Val MSE: 1.6090104 Val MAE: 0.8542070
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0010240000000000002
+Epoch: 7 cost time: 0.44142937660217285
+Epoch: 7, Steps: 30 | Train Loss: 0.5215512 Val MSE: 1.6212493 Val MAE: 0.8541648
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0008192000000000002
+Epoch: 8 cost time: 0.8741779327392578
+Epoch: 8, Steps: 30 | Train Loss: 0.5163323 Val MSE: 1.6147353 Val MAE: 0.8536062
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0006553600000000002
+Epoch: 9 cost time: 0.8069350719451904
+Epoch: 9, Steps: 30 | Train Loss: 0.5122278 Val MSE: 1.6344239 Val MAE: 0.8564605
+EarlyStopping counter: 5 out of 5
+Early stopping
+
+======================================================
+BEST VALIDATION CHECKPOINT
+======================================================
+Best epoch:          4
+Validation MSE:      1.52205101
+Validation MAE:      0.83821636
+======================================================
+
+>>>>>>>testing : ETTh1_CycleNet_L192_H720_bs256_lr0p002_revin1_seed2024_CycleNet_ETTh1_ftM_sl192_pl720_cycle24_mlp_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+
+======================================================
+FINAL TEST RESULTS
+======================================================
+MSE: 0.50679016
+MAE: 0.48829669
+======================================================
+
+VERIFIED ETTh1_CycleNet_L192_H720_bs256_lr0p002_revin1_seed2024: best Val MSE=1.5170487 (epoch 4), Test MSE=0.5067902, Test MAE=0.4882967
+ETTh1: 4/4 completed for seed 2024
+DONE: ETTh1, fixed lookback 192.
+Per-dataset results: /home/alalade/CycleNet/fixed_lookback_grid/cyclenet_L192_baselines/ETTh1/results.csv
+After ALL array tasks finish, combine with:
+bash /var/spool/slurm/d/job382371/slurm_script --summarize-only

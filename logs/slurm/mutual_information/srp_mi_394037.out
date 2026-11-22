@@ -1,0 +1,45 @@
+/home/alalade/CycleNet/venv/bin/python
+Python 3.12.3
+ETTm1    OK      dataset/ETTm1.csv
+Solar    OK      dataset/solar_AL.txt
+Weather  OK      dataset/weather.csv
+PEMS08   OK      dataset/PEMS08.npz
+ETTm2    OK      dataset/ETTm2.csv
+ETTh1    OK      dataset/ETTh1.csv
+ETTh2    OK      dataset/ETTh2.csv
+
+Computing ETTm1...
+  training points 34560 sampled pairs 21 raw corrected NMI 0.08559 cycle adjusted corrected NMI 0.07327
+
+Computing Solar...
+  training points 36792 sampled pairs 2500 raw corrected NMI 0.51086 cycle adjusted corrected NMI 0.40856
+
+Computing Weather...
+  training points 36887 sampled pairs 210 raw corrected NMI 0.10864 cycle adjusted corrected NMI 0.09525
+
+Computing PEMS08...
+  training points 10713 sampled pairs 2500 raw corrected NMI 0.23146 cycle adjusted corrected NMI 0.07814
+
+Computing ETTm2...
+  training points 34560 sampled pairs 21 raw corrected NMI 0.12462 cycle adjusted corrected NMI 0.11469
+
+Computing ETTh1...
+  training points 8640 sampled pairs 21 raw corrected NMI 0.08375 cycle adjusted corrected NMI 0.07735
+
+Computing ETTh2...
+  training points 8640 sampled pairs 21 raw corrected NMI 0.12313 cycle adjusted corrected NMI 0.11715
+
+==== MI x forecasting results ====
+dataset  raw_mean_corrected_nmi  cycle_adjusted_mean_corrected_nmi  winrate_mse_any_variant_vs_cyclenet
+  ETTm1                  0.0856                             0.0733                               0.8125
+  Solar                  0.5109                             0.4086                               0.7500
+Weather                  0.1086                             0.0953                               0.4375
+ PEMS08                  0.2315                             0.0781                               0.1250
+  ETTm2                  0.1246                             0.1147                               0.6875
+  ETTh1                  0.0838                             0.0773                               0.7500
+  ETTh2                  0.1231                             0.1172                               0.9375
+
+All 16 exact-permutation association tests: mi_associations.csv
+MI-versus-TE comparison (same 5 datasets): mi_vs_te_same5.csv
+Interpret only as exploratory dataset-level correlations (n=7, multiple tests).
+Outputs in: mi_srp_results

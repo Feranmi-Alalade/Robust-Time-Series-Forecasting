@@ -15,8 +15,6 @@ Residual Cycle Forecasting learns a repeating template with one value per cycle 
 
 The baseline shares the temporal forecasting weights across channels and processes each channel independently. The cycle length is configured in samples. Set it using the sampling frequency and a known period or use autocorrelation to identify a candidate period. The loaders compute cycle phase from row position, so keep observations in chronological order on a regular grid and resolve missing timestamps before training. [Baseline implementation](models/CycleNet.py) · [Data loaders](data_provider/data_loader.py)
 
-![Residual Cycle Forecasting architecture](Figures/Figure2.png)
-
 ### Research extensions
 
 The main experiments test whether one channel's deviations from its recurring pattern help forecast other channels. The three mixing variants apply a learnable gated residual update before the temporal forecast. Their gates start at zero.
@@ -78,7 +76,7 @@ python -u run.py \
   --num_workers 4 --random_seed 2024 --itr 1
 ```
 
-Use `--model_type linear` to train the linear baseline. The training loop saves the best validation checkpoint, reloads it, and evaluates the test split. Baseline recipes for multiple benchmarks are in [scripts/CycleNet/](scripts/CycleNet/), and the batch launcher is [old_slurm/run_main.sh](old_slurm/run_main.sh).
+Use `--model_type linear` to train the linear baseline. The training loop saves the best validation checkpoint, reloads it, and evaluates the test split. Baseline recipes for multiple benchmarks are in [scripts/CycleNet/](scripts/CycleNet/).
 
 ## Experiment workflows
 
@@ -126,18 +124,6 @@ Before submission, ensure `dataset/electricity.csv` and `dependency_scores/Elect
 
 Check each script's configuration before launching. Several research wrappers include cluster-specific paths and use `--summarize-only` for rebuilding tables, whereas the Electricity script uses `--summary`.
 
-### Analyze channel dependence
-
-The mutual-information study asks whether datasets with stronger channel dependence also show more frequent gains from mixing. It estimates quantile-binned normalized mutual information using training observations, compares raw and cycle-adjusted series, and uses circular shifts to estimate a bias control. It relates those statistics to benchmark win counts already recorded in the script.
-
-```bash
-python srp_mutual_information_test.py --data-dir ./dataset \
-  --output-dir ./mi_srp_results --bins 8 --sample-size 8000 \
-  --pair-cap 2500 --shift-controls 3 --seed 2024
-```
-
-The spread across datasets is exploratory. The analysis covers seven datasets and measures association at the dataset level. [Analysis implementation](srp_mutual_information_test.py) · [Slurm wrapper](scripts/experiments/analysis/run_srp_mutual_information.sh)
-
 ## Read the results
 
 A standalone training run writes a checkpoint under `checkpoints/` by default, prints the best validation checkpoint and final test MSE and MAE, and appends the test metrics to `result.txt`. Grid scripts maintain their own result files. For Electricity, look under `fixed_lookback_grid/electricity/`.
@@ -162,8 +148,10 @@ Use validation MSE to select configurations and report held-out test MSE and MAE
 | [data_provider/](data_provider/) | File loaders, chronological splits, windowing, and cycle indices. |
 | [utils/](utils/) | Metrics, time features, and training utilities. |
 | [scripts/experiments/](scripts/experiments/) | Research launchers by dataset, plus baseline and analysis scripts. |
-| [scripts/](scripts/) and [old_slurm/](old_slurm/) | Baseline recipes and historical launchers. |
-| `fixed_lookback_grid/`, `dependency_scores/`, `mi_srp_results/` | Outputs from grid searches, dependency estimation, and mutual-information analysis. |
+| [scripts/](scripts/) and [pairmix_slurm/](pairmix_slurm/) | Baseline recipes and PairMix tuning launchers. |
+| `fixed_lookback_grid/` and `results/` | Published benchmark tables. |
+| `dependency_scores/` | Benchmark matrices for PairMix. |
+| `logs/` | Organized run logs. |
 
 ## Citation
 

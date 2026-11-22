@@ -1,0 +1,22 @@
+/home/alalade/CycleNet/venv/bin/python
+Python 3.12.3
+Creating PEMS08 dependency matrix...
+Using checkpoint: ./checkpoints/PEMS08_CycleNet_dependency_CycleNet_PEMS_ftM_sl336_pl96_cycle288_mlp_seed2024/checkpoint.pth
+Using device: cuda
+train 10282
+Residual matrix: (3440640, 170)
+Dependency matrix: (170, 170)
+Saved dependency scores to: ./dependency_scores/PEMS08_dependency.npy
+Dependency matrix generated.
+
+========== PEMS08 DEPENDENCY ==========
+Shape: (170, 170)
+Minimum: 0.0
+Maximum: 1.0
+Mean (off-diagonal): 0.8300772
+Symmetric: True
+Contains NaN/Inf: False
+Verification: PASSED
+
+Done.
+-rw-r--r-- 1 alalade students 114K Nov  6 16:09 dependency_scores/PEMS08_dependency.npy

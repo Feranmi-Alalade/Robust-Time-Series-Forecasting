@@ -1,0 +1,73 @@
+Python: /home/alalade/CycleNet/venv/bin/python
+Electricity | L=336 H=336 | CycleNetMix | 16 trials
+Dependency: /home/alalade/CycleNet/dependency_scores/Electricity_dependency.npy
+[1/16] TRAIN Electricity_CycleNetMix_L336_H336_bs32_lr0p0001_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs32_lr0p0001_layers1_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs32_lr0p0001_layers1_seed2024 | Val MSE=0.14617779 | Test MSE=0.18139374 | Test MAE=0.28209773
+SUMMARY: 810/1408 trials complete; 27/48 groups finalized
+[2/16] TRAIN Electricity_CycleNetMix_L336_H336_bs32_lr0p0001_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs32_lr0p0001_layers2_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs32_lr0p0001_layers2_seed2024 | Val MSE=0.14846719 | Test MSE=0.18548782 | Test MAE=0.28649834
+SUMMARY: 815/1408 trials complete; 27/48 groups finalized
+[3/16] TRAIN Electricity_CycleNetMix_L336_H336_bs32_lr0p0005_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs32_lr0p0005_layers1_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs32_lr0p0005_layers1_seed2024 | Val MSE=0.15075831 | Test MSE=0.18327996 | Test MAE=0.28455552
+SUMMARY: 819/1408 trials complete; 27/48 groups finalized
+[4/16] TRAIN Electricity_CycleNetMix_L336_H336_bs32_lr0p0005_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs32_lr0p0005_layers2_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs32_lr0p0005_layers2_seed2024 | Val MSE=0.15147661 | Test MSE=0.18409657 | Test MAE=0.28558272
+SUMMARY: 824/1408 trials complete; 27/48 groups finalized
+[5/16] TRAIN Electricity_CycleNetMix_L336_H336_bs32_lr0p001_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs32_lr0p001_layers1_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs32_lr0p001_layers1_seed2024 | Val MSE=0.15601414 | Test MSE=0.19384982 | Test MAE=0.29423350
+SUMMARY: 825/1408 trials complete; 27/48 groups finalized
+[6/16] TRAIN Electricity_CycleNetMix_L336_H336_bs32_lr0p001_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs32_lr0p001_layers2_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs32_lr0p001_layers2_seed2024 | Val MSE=0.15381089 | Test MSE=0.18886219 | Test MAE=0.29041943
+SUMMARY: 827/1408 trials complete; 27/48 groups finalized
+[7/16] TRAIN Electricity_CycleNetMix_L336_H336_bs32_lr0p002_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs32_lr0p002_layers1_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs32_lr0p002_layers1_seed2024 | Val MSE=0.15902319 | Test MSE=0.19785416 | Test MAE=0.29766285
+SUMMARY: 830/1408 trials complete; 27/48 groups finalized
+[8/16] TRAIN Electricity_CycleNetMix_L336_H336_bs32_lr0p002_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs32_lr0p002_layers2_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs32_lr0p002_layers2_seed2024 | Val MSE=0.15751429 | Test MSE=0.18837865 | Test MAE=0.29067793
+SUMMARY: 832/1408 trials complete; 27/48 groups finalized
+[9/16] TRAIN Electricity_CycleNetMix_L336_H336_bs64_lr0p0001_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs64_lr0p0001_layers1_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs64_lr0p0001_layers1_seed2024 | Val MSE=0.14623497 | Test MSE=0.17705403 | Test MAE=0.27733999
+SUMMARY: 839/1408 trials complete; 27/48 groups finalized
+[10/16] TRAIN Electricity_CycleNetMix_L336_H336_bs64_lr0p0001_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs64_lr0p0001_layers2_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs64_lr0p0001_layers2_seed2024 | Val MSE=0.14902787 | Test MSE=0.18198645 | Test MAE=0.28270492
+SUMMARY: 847/1408 trials complete; 27/48 groups finalized
+[11/16] TRAIN Electricity_CycleNetMix_L336_H336_bs64_lr0p0005_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs64_lr0p0005_layers1_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs64_lr0p0005_layers1_seed2024 | Val MSE=0.15046209 | Test MSE=0.18674678 | Test MAE=0.28782138
+SUMMARY: 851/1408 trials complete; 27/48 groups finalized
+[12/16] TRAIN Electricity_CycleNetMix_L336_H336_bs64_lr0p0005_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs64_lr0p0005_layers2_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs64_lr0p0005_layers2_seed2024 | Val MSE=0.15206620 | Test MSE=0.18710935 | Test MAE=0.28877917
+SUMMARY: 853/1408 trials complete; 27/48 groups finalized
+[13/16] TRAIN Electricity_CycleNetMix_L336_H336_bs64_lr0p001_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs64_lr0p001_layers1_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs64_lr0p001_layers1_seed2024 | Val MSE=0.14903131 | Test MSE=0.18013471 | Test MAE=0.28129512
+SUMMARY: 857/1408 trials complete; 28/48 groups finalized
+[14/16] TRAIN Electricity_CycleNetMix_L336_H336_bs64_lr0p001_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs64_lr0p001_layers2_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs64_lr0p001_layers2_seed2024 | Val MSE=0.15101358 | Test MSE=0.18415700 | Test MAE=0.28516904
+SUMMARY: 859/1408 trials complete; 28/48 groups finalized
+[15/16] TRAIN Electricity_CycleNetMix_L336_H336_bs64_lr0p002_layers1_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs64_lr0p002_layers1_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs64_lr0p002_layers1_seed2024 | Val MSE=0.15268959 | Test MSE=0.19131108 | Test MAE=0.29121476
+SUMMARY: 862/1408 trials complete; 28/48 groups finalized
+[16/16] TRAIN Electricity_CycleNetMix_L336_H336_bs64_lr0p002_layers2_seed2024 | /home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs64_lr0p002_layers2_seed2024.log
+VERIFIED: Electricity_CycleNetMix_L336_H336_bs64_lr0p002_layers2_seed2024 | Val MSE=0.15256493 | Test MSE=0.18501472 | Test MAE=0.28565180
+SUMMARY: 865/1408 trials complete; 29/48 groups finalized
+FINAL WINNER (LOWEST VALIDATION MSE):
+{
+  "dataset": "Electricity",
+  "model": "CycleNetMix",
+  "lookback": 336,
+  "horizon": 336,
+  "batch_size": 32,
+  "learning_rate": "0.0001",
+  "mix_layers": 1,
+  "mix_ratio": null,
+  "mix_rank": null,
+  "mix_hidden": 64,
+  "mix_dropout": 0.1,
+  "seed": 2024,
+  "run_id": "Electricity_CycleNetMix_L336_H336_bs32_lr0p0001_layers1_seed2024",
+  "best_epoch": 12,
+  "validation_mse": 0.14617779,
+  "test_mse": 0.18139374,
+  "test_mae": 0.28209773,
+  "log": "/home/alalade/CycleNet/fixed_lookback_grid/electricity/logs/Electricity_CycleNetMix_L336_H336_bs32_lr0p0001_layers1_seed2024.log"
+}
+SUMMARY: 865/1408 trials complete; 29/48 groups finalized
