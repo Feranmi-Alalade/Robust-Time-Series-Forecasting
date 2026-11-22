@@ -1,145 +1,173 @@
 # CycleNet
 
-Welcome to the official repository of the CycleNet paper: "[CycleNet: Enhancing Time Series Forecasting through Modeling Periodic Patterns](https://arxiv.org/pdf/2409.18479)". 
+CycleNet forecasts multivariate time series by learning recurring patterns and predicting the deviations from those patterns. This repository contains the implementation of *CycleNet: Enhancing Time Series Forecasting through Modeling Periodic Patterns* and research extensions that test when information from other channels improves a forecast. [CycleNet paper](https://arxiv.org/abs/2409.18479)
 
-[[Poster|海报]](https://drive.google.com/file/d/1dBnmrjtTab4M5L9qfrdAp2Y_xr53hBZ1/view?usp=drive_link) -
-[[Slides|幻灯片]](https://drive.google.com/file/d/1QcCCxRFtnFYPtaXmZiF4Zby5r-nl5tR5/view?usp=drive_link) - 
-[[中文解读]](https://zhuanlan.zhihu.com/p/984766136)
+[Model](#how-cyclenet-works) · [Setup](#setup) · [Datasets](#datasets) · [Training](#train-a-baseline) · [Experiments](#experiment-workflows) · [Results](#read-the-results) · [Citation](#citation)
 
-## Updates
-🚩 **News** (2025.05): Our latest work, [**TQNet**](https://github.com/ACAT-SCUT/TQNet), has been accepted to **ICML 2025**. TQNet is a powerful successor to CycleNet, addressing its limitation in *modeling inter-variable correlations* effectively.
+## How CycleNet works
 
-🚩 **News** (2024.10): Thanks to the contribution of [wayhoww](https://github.com/wayhoww), CycleNet has been updated with a [new implementation](https://github.com/ACAT-SCUT/CycleNet/blob/f1deb5e1329970bf0c97b8fa593bb02c6d894587/models/CycleNet.py#L17) for generating cyclic components, achieving a 2x to 3x acceleration.
+Residual Cycle Forecasting learns a repeating template with one value per cycle position and channel. For hourly electricity data with a weekly cycle, the template has 168 positions. Given a history window, CycleNet:
 
-🚩 **News** (2024.09): CycleNet has been accepted as **NeurIPS 2024 _Spotlight_** (_average rating 7.25_, Top 1%).
+1. Optionally normalizes each channel using the mean and variance of that input window.
+2. Subtracts the learned template at the cycle positions covered by the history.
+3. Forecasts the residuals with a linear layer or a two-layer MLP.
+4. Adds the template at the future cycle positions and reverses the instance normalization when enabled.
 
-**Please note that** [**SparseTSF**](https://github.com/lss-1138/SparseTSF), [**CycleNet**](https://github.com/ACAT-SCUT/CycleNet), and [**TQNet**](https://github.com/ACAT-SCUT/TQNet) represent our continued exploration of **leveraging periodicity** for long-term time series forecasting (LTSF). 
-The differences and connections among them are as follows:
+The baseline shares the temporal forecasting weights across channels and processes each channel independently. The cycle length is configured in samples. Set it using the sampling frequency and a known period or use autocorrelation to identify a candidate period. The loaders compute cycle phase from row position, so keep observations in chronological order on a regular grid and resolve missing timestamps before training. [Baseline implementation](models/CycleNet.py) · [Data loaders](data_provider/data_loader.py)
 
-|                            Model                             |        Use of Periodicity         |            Technique             |                   Effect                   |      Efficiency      |                   Strengths                   |                      Limitation                       |
-| :----------------------------------------------------------: | :-------------------------------: | :------------------------------: | :----------------------------------------: | :------------------: | :-------------------------------------------: | :---------------------------------------------------: |
-| [**SparseTSF**](https://github.com/lss-1138/SparseTSF)  <br> **(ICML 2024 Oral**) |    Indirectly via downsampling    | Cross-Period Sparse Forecasting  |             Ultra-light design             |   < 1k parameters    |       Extremely lightweight, near SOTA        | Hard to model long periods without extending the input length **(solved by CycleNet)** |
-| [**CycleNet**](https://github.com/ACAT-SCUT/CycleNet) <br> **(NeurIPS 2024 Spotlight)** | Explicit via learnable parameters | Residual Cycle Forecasting (RCF) |         Better use of periodicity          | 100k ~ 1M parameters |      Strong performance on periodic data      | Fails in multivariate modeling **(solved by TQNet)**  |
-|                  [**TQNet**](https://github.com/ACAT-SCUT/TQNet) <br> **(ICML 2025)**                   |    Serve as global correlations     |   Temporal Query in attention mechanism  | Robust inter-variable correlation modeling |    ~1M parameters    | Enhanced multivariate forecasting performance |     Hard to scale to ultra-long look-back inputs due to low SNR in multivariate histories      |
+![Residual Cycle Forecasting architecture](Figures/Figure2.png)
 
-## Introduction
+### Research extensions
 
-CycleNet pioneers the **explicit modeling of periodicity** to enhance model performance in long-term time series forecasting (LTSF) tasks. Specifically, we introduce the Residual Cycle Forecasting (RCF) technique, which uses **learnable recurrent cycles** to capture inherent periodic patterns in sequences and then makes predictions on the *residual components* of the modeled cycles. 
+The main experiments test whether one channel's deviations from its recurring pattern help forecast other channels. The three mixing variants apply a learnable gated residual update before the temporal forecast. Their gates start at zero.
 
-![image](Figures/Figure2.png)
+| Experiment label | `--model` | Channel interaction |
+| --- | --- | --- |
+| CycleNet | `CycleNet` | Each channel uses its own history. |
+| CycleNetMix | `CycleNetMixTune` in the fixed-lookback grids | An MLP mixes the channels at each lookback step. |
+| PairMix | `CycleNetPairMix` | Each target channel receives a learned linear combination of selected source channels. |
+| MixLowRank | `CycleNetMixLowRank` | A bottleneck of configurable rank limits the dimension of the channel interaction. |
 
-The RCF technique comprises two steps: the first step involves modeling the periodic patterns of sequences through globally **learnable recurrent cycles** within independent channels, and the second step entails predicting the *residual components* of the modeled cycles.
+The model registry also includes an earlier `CycleNetMix` implementation, `CycleNetMixLag`, trend and multiscale trend variants, and benchmark models including DLinear, PatchTST, and SparseTSF. Use the experiment's recorded model argument when reproducing a run. [Model registry](exp/exp_main.py) · [Model implementations](models/)
 
-![image](Figures/Figure3.png)
+## Setup
 
-The learnable recurrent cycles _**Q**_ are initialized to ***zeros*** and then undergo gradient backpropagation training along with the backbone module for prediction, yielding *learned representations* (different from the initial zeros) that uncover the cyclic patterns embedded within the sequence. Here, we have provided the code implementation [[visualization.ipynb](https://github.com/ACAT-SCUT/CycleNet/blob/main/visualization.ipynb)] to visualize the learned periodic patterns.
+Run the examples from the repository root. Use Python 3.10 or later for the full set of research utilities. The cluster scripts commonly use a virtual environment at `./venv`.
 
-![image](Figures/Figure4.png)
-
-RCF can be regarded as a novel approach to achieve Seasonal-Trend Decomposition (STD). Compared to other existing methods, such as moving averages (used in DLinear, FEDformer, and Autoformer), it offers significant advantages.
-
-![image](Figures/Table5.png)
-
-As a result, CycleNet can achieve current state-of-the-art performance using only a simple Linear or dual-layer MLP as its backbone, and it also provides substantial computational efficiency.
-
-![image](Figures/Table2.png)
-
-In addition to simple models like Linear and MLP, RCF can also improve the performance of more advanced algorithms.
-
-![image](Figures/Table4.png)
-
-Finally, as an explicit periodic modeling technique, RCF requires that the period length of the data is identified beforehand. 
-For RCF to be effective, the length ***W*** of the learnable recurrent cycles _**Q**_ must accurately match the intrinsic period length of the data.
-
-![image](Figures/Table6.png)
-
-To identify the data's inherent period length, a straightforward method is manual inference. For instance, in the Electricity dataset, we know there is a weekly periodic pattern and that the sampling granularity is hourly, so the period length can be deduced to be 168.
-
-Moreover, a more scientific approach is to use the Autocorrelation Function (ACF), for which we provide an example ([ACF_ETTh1.ipynb](https://github.com/lss-1138/SparseTSF/blob/main/ACF_ETTh1.ipynb)) in the [SparseTSF](https://github.com/lss-1138/SparseTSF) repository. The hyperparameter ***W*** should be set to the lag corresponding to the observed maximum peak.
-
-![image](Figures/Figure6.png)
-
-## Model Implementation
-
-The key technique of CycleNet (or RCF) is to use learnable recurrent cycle to explicitly model the periodic patterns within the data, and then model the residual components of the modeled cycles using either a single-layer Linear or a dual-layer MLP. The core implementation code of CycleNet (or RCF) is available at:
-
-```
-models/CycleNet.py
+```bash
+python3 -m venv venv
+source venv/bin/activate
+python -m pip install -r requirements.txt
+python run.py --help
 ```
 
-To identify the relative position of each sample within the recurrent cycles, we need to generate cycle index (i.e., **_t_ mod _W_** mentioned in the paper) additionally for each data sample. The code for this part is available at:
+Install Optuna if you plan to use the `tune_*_optuna.py` scripts.
 
-```
-data_provider/data_loader.py
-```
-The specific implementation code of cycle index includes:
-```python
-def __read_data__(self):
-    ...
-    self.cycle_index = (np.arange(len(data)) % self.cycle)[border1:border2]
-
-def __getitem__(self, index):
-    ...
-    cycle_index = torch.tensor(self.cycle_index[s_end])
-    return ..., cycle_index
+```bash
+python -m pip install optuna
 ```
 
-This simple implementation requires ensuring that the sequences have **no missing values**. In practical usage, a more elegant approach can be employed to generate the cycle index, such as mapping real-time timestamp to indices, for example:
-```python
-def getCycleIndex(timestamp, frequency, cycle_len):
-    return (timestamp / frequency) % cycle_len
+Single experiments can run on CPU when CUDA is unavailable. For GPU runs, use a PyTorch installation compatible with the cluster's CUDA environment. The Slurm grids request GPUs and may need site-specific partition, resource, and path settings.
+
+## Datasets
+
+Place the input files directly under `dataset/` or set `--root_path` for a standalone run. The channel counts and cycle lengths below match the multivariate experiments in this repository.
+
+| Dataset | File | `--data` | Channels | Cycle in samples |
+| --- | --- | --- | ---: | ---: |
+| ETT hourly | `ETTh1.csv`, `ETTh2.csv` | `ETTh1`, `ETTh2` | 7 | 24 |
+| ETT 15-minute | `ETTm1.csv`, `ETTm2.csv` | `ETTm1`, `ETTm2` | 7 | 96 |
+| Electricity | `electricity.csv` | `custom` | 321 | 168 |
+| Weather | `weather.csv` | `custom` | 21 | 144 |
+| Solar | `solar_AL.txt` | `Solar` | 137 | 144 |
+| PEMS08 | `PEMS08.npz` | `PEMS` | 170 | 288 |
+
+The custom CSV loader expects a `date` column and a target column named `OT` by default. It places the target last in the channel order. Solar uses a headerless, comma-separated text file. The PEMS loader reads the first feature of the archive's `data` array for every sensor. Loaders create chronological train, validation, and test splits and fit their scalers on the training split. Keep the loader and channel order consistent between feature preparation and training. [Benchmark data archive](https://drive.google.com/file/d/1bNbw1y8VYp-8pkRTqbjoW-TA-G8T0EQf/view) · [PEMS source project](https://github.com/cure-lab/SCINet) · [Loader registry](data_provider/data_factory.py)
+
+## Train a baseline
+
+This example trains CycleNet/MLP on ETTh1 using 96 observed time steps to forecast the next 96. With `--features M`, the model forecasts all seven channels.
+
+```bash
+python -u run.py \
+  --is_training 1 --model_id ETTh1_baseline_L96_H96 --model CycleNet \
+  --root_path ./dataset/ --data_path ETTh1.csv --data ETTh1 --features M \
+  --seq_len 96 --label_len 0 --pred_len 96 --enc_in 7 --cycle 24 \
+  --model_type mlp --d_model 512 --use_revin 1 \
+  --batch_size 64 --learning_rate 0.001 --train_epochs 30 --patience 5 \
+  --num_workers 4 --random_seed 2024 --itr 1
 ```
 
+Use `--model_type linear` to train the linear baseline. The training loop saves the best validation checkpoint, reloads it, and evaluates the test split. Baseline recipes for multiple benchmarks are in [scripts/CycleNet/](scripts/CycleNet/), and the batch launcher is [old_slurm/run_main.sh](old_slurm/run_main.sh).
 
+## Experiment workflows
 
-## Getting Started
+### Build a PairMix dependency matrix
 
-### Environment Requirements
+PairMix selects a fraction of the other channels for each target channel using `--mix_ratio`. The dependency builder loads a trained CycleNet checkpoint, reproduces its input normalization and cycle subtraction on training windows, and computes the absolute Pearson correlation between residual channels. It saves a square NumPy matrix with a zero diagonal. Channel indices must follow the forecast loader's channel order. [Dependency builder](create_dependency_scores.py) · [PairMix implementation](models/CycleNetPairMix.py)
 
-To get started, ensure you have Conda installed on your system and follow these steps to set up the environment:
+After training the ETTh1 example above, generate the corresponding matrix with:
 
-```
-conda create -n CycleNet python=3.8
-conda activate CycleNet
-pip install -r requirements.txt
-```
-
-### Data Preparation
-
-All the datasets needed for CycleNet can be obtained from the [[Google Drive]](https://drive.google.com/file/d/1bNbw1y8VYp-8pkRTqbjoW-TA-G8T0EQf/view) that introduced in previous works such as Autoformer and SCINet. 
-Create a separate folder named ```./dataset``` and place all the CSV files in this directory. 
-**Note**: Place the CSV files directly into this directory, such as "./dataset/ETTh1.csv"
-
-### Training Example
-
-You can easily reproduce the results from the paper by running the provided script command. For instance, to reproduce the main results, execute the following command:
-
-```
-sh run_main.sh
+```bash
+mkdir -p dependency_scores
+python create_dependency_scores.py \
+  --root_path ./dataset/ --data_path ETTh1.csv --data ETTh1 --features M \
+  --seq_len 96 --label_len 0 --pred_len 96 --enc_in 7 --cycle 24 \
+  --model_type mlp --d_model 512 --use_revin 1 --batch_size 64 --num_workers 4 \
+  --checkpoint ./checkpoints/ETTh1_baseline_L96_H96_CycleNet_ETTh1_ftM_sl96_pl96_cycle24_mlp_seed2024/checkpoint.pth \
+  --output ./dependency_scores/ETTh1_example_dependency.npy
 ```
 
-**For your convenience**, we have provided the execution results of "sh run_main.sh" in [**[result.txt](https://github.com/ACAT-SCUT/CycleNet/blob/main/result.txt)**], which contain the results of running CycleNet/Linear and CycleNet/MLP five times each with various input lengths {96, 336, 720} and random seeds {2024, 2025, 2026, 2027, 2028}.
+To train PairMix, rerun the training command with a distinct `--model_id`, set `--model CycleNetPairMix`, and append `--mix_ratio 0.4 --dependency_score_path ./dependency_scores/ETTh1_example_dependency.npy`. For benchmark matrices, use the recipes for [Electricity](scripts/experiments/electricity/electricity_dependency.sh), [ETT](scripts/experiments/ett/ett_dependency_matrices.sh), and [PEMS08](scripts/experiments/pems08/create_pems08_dependency.sh).
 
-You can also run the following command to reproduce the results of various STD techniques as well as the performance on the PEMS datasets (the PEMS datasets can be obtained from [SCINet](https://github.com/cure-lab/SCINet)):
+### Run the Electricity grid
 
+The [Electricity grid](scripts/experiments/electricity/electricity_fixed_lookback_grid.sh) crosses four lookbacks and four horizons (96, 192, 336, and 720) with three mixing models. Each of its 48 Slurm array tasks covers one model, lookback, and horizon. The grid runs 1,408 configurations in total, varying learning rate and batch size as well as mixing depth, ratio, or rank as applicable. It uses seed 2024 and a weekly cycle.
+
+```bash
+export PROJECT_DIR="$PWD"
+export PYTHON_BIN="$PROJECT_DIR/venv/bin/python"
+bash scripts/experiments/electricity/electricity_fixed_lookback_grid.sh --plan
+sbatch scripts/experiments/electricity/electricity_fixed_lookback_grid.sh
+bash scripts/experiments/electricity/electricity_fixed_lookback_grid.sh --summary
 ```
-sh run_std.sh
-sh run_pems.sh
+
+Before submission, ensure `dataset/electricity.csv` and `dependency_scores/Electricity_dependency.npy` are present and adapt the Slurm directives to your cluster. The script stores verified trials as JSON and skips those records on resubmission. `--summary` rebuilds the summary CSVs from the saved records.
+
+### Run other benchmarks and tuning studies
+
+| Workflow | Entry points |
+| --- | --- |
+| CycleNet MLP baseline sweeps | [Three-lookback baseline](scripts/experiments/baseline/cyclenet_mlp_three_lookbacks.sh) |
+| ETTm1, Solar, and Weather mixing grids | [ETTm1](scripts/experiments/ett/srp_fixed_lookback_ettm1.sh), [Solar](scripts/experiments/solar/srp_fixed_lookback_solar.sh), [Weather](scripts/experiments/weather/srp_fixed_lookback_weather.sh) |
+| ETTm2, ETTh1, and ETTh2 mixing grids | [ETT PairMix](scripts/experiments/ett/ett_pairmix_fixed_lookback_grid.sh), [ETTm2 mix and low rank](scripts/experiments/ett/srp_ettm2_mix_lowrank_grid.sh), [ETTh1 mix and low rank](scripts/experiments/ett/srp_etth1_mix_lowrank_grid.sh), [ETTh2 mix and low rank](scripts/experiments/ett/srp_etth2_mix_lowrank_grid.sh) |
+| PEMS08 short-horizon experiments (12, 24, 48, and 96 steps) | [Baseline](scripts/experiments/pems08/srp_pems08_paper_baseline_12_24_48_96.sh), [Mixing grid](scripts/experiments/pems08/srp_pems08_mixing_12_24_48_96.sh), [Re-evaluate winners with RevIN disabled](scripts/experiments/pems08/pems08_winners_revin_off.sh) |
+| Optuna studies | [PairMix](tune_pairmix_optuna.py), [Low rank](tune_lowrank_optuna.py), [Trend](tune_trend_optuna.py) |
+
+Check each script's configuration before launching. Several research wrappers include cluster-specific paths and use `--summarize-only` for rebuilding tables, whereas the Electricity script uses `--summary`.
+
+### Analyze channel dependence
+
+The mutual-information study asks whether datasets with stronger channel dependence also show more frequent gains from mixing. It estimates quantile-binned normalized mutual information using training observations, compares raw and cycle-adjusted series, and uses circular shifts to estimate a bias control. It relates those statistics to benchmark win counts already recorded in the script.
+
+```bash
+python srp_mutual_information_test.py --data-dir ./dataset \
+  --output-dir ./mi_srp_results --bins 8 --sample-size 8000 \
+  --pair-cap 2500 --shift-controls 3 --seed 2024
 ```
 
-Furthermore, you can specify separate scripts to run independent tasks, such as obtaining results on etth1:
+The spread across datasets is exploratory. The analysis covers seven datasets and measures association at the dataset level. [Analysis implementation](srp_mutual_information_test.py) · [Slurm wrapper](scripts/experiments/analysis/run_srp_mutual_information.sh)
 
-```
-sh scripts/CycleNet/Linear-Input-96/etth1.sh
-```
+## Read the results
 
+A standalone training run writes a checkpoint under `checkpoints/` by default, prints the best validation checkpoint and final test MSE and MAE, and appends the test metrics to `result.txt`. Grid scripts maintain their own result files. For Electricity, look under `fixed_lookback_grid/electricity/`.
 
+| File or directory | Contents |
+| --- | --- |
+| `coverage.csv` | Completed and expected trial counts by model, lookback, and horizon. |
+| `all_trials.csv` | Metrics and configuration for every verified trial. |
+| `winning_configurations.csv` | Lowest-validation-MSE configuration within each completed model, lookback, and horizon group, with test results for that same configuration. |
+| `provisional_winners.csv` | Best observed configurations with completion status, including partially searched groups. |
+| `logs/`, `results/`, `checkpoints/` | Per-trial logs, verified JSON records, and trained weights. |
 
+Use validation MSE to select configurations and report held-out test MSE and MAE for those configurations. When comparing against CycleNet, match the dataset split, lookback, horizon, normalization setting, and seed. Check grid coverage and search sizes when interpreting comparisons. The Electricity grid compares the three mixing variants at a single seed. Use a matched CycleNet baseline and additional seeds to assess the size and consistency of any improvement.
 
+## Repository layout
+
+| Path | Purpose |
+| --- | --- |
+| [run.py](run.py) | Training and evaluation CLI, configuration, and seeding. |
+| [exp/](exp/) | Model registry, training loops, validation, checkpointing, and evaluation. |
+| [models/](models/) and [layers/](layers/) | Forecasting models and building blocks. |
+| [data_provider/](data_provider/) | File loaders, chronological splits, windowing, and cycle indices. |
+| [utils/](utils/) | Metrics, time features, and training utilities. |
+| [scripts/experiments/](scripts/experiments/) | Research launchers by dataset, plus baseline and analysis scripts. |
+| [scripts/](scripts/) and [old_slurm/](old_slurm/) | Baseline recipes and historical launchers. |
+| `fixed_lookback_grid/`, `dependency_scores/`, `mi_srp_results/` | Outputs from grid searches, dependency estimation, and mutual-information analysis. |
 
 ## Citation
-If you find this repo useful, please cite our paper.
-```
+
+```bibtex
 @inproceedings{cyclenet,
   title={CycleNet: Enhancing Time Series Forecasting through Modeling Periodic Patterns},
   author={Lin, Shengsheng and Lin, Weiwei and Hu, Xinyi and Wu, Wentai and Mo, Ruichao and Zhong, Haocheng},
@@ -148,39 +176,6 @@ If you find this repo useful, please cite our paper.
 }
 ```
 
+Upstream project resources include the [poster](https://drive.google.com/file/d/1dBnmrjtTab4M5L9qfrdAp2Y_r53hBZ1/view), [slides](https://drive.google.com/file/d/1QcCCXRFtnFYPtaXmZiF4Zby5r-nl5tR5/view), and [TQNet successor project](https://github.com/ACAT-SCUT/TQNet).
 
-
-
-
-## Contact
-If you have any questions or suggestions, feel free to contact:
-- Shengsheng Lin ([cslinshengsheng@mail.scut.edu.cn]())
-- Weiwei Lin ([linww@scut.edu.cn]())
-- Xinyi Hu (xyhu@cse.cuhk.edu.hk)
-
-## Acknowledgement
-
-We extend our heartfelt appreciation to the following GitHub repositories for providing valuable code bases and datasets:
-
-https://github.com/lss-1138/SparseTSF
-
-https://github.com/thuml/iTransformer
-
-https://github.com/lss-1138/SegRNN
-
-https://github.com/yuqinie98/patchtst
-
-https://github.com/cure-lab/LTSF-Linear
-
-https://github.com/zhouhaoyi/Informer2020
-
-https://github.com/thuml/Autoformer
-
-https://github.com/MAZiqing/FEDformer
-
-https://github.com/alipay/Pyraformer
-
-https://github.com/ts-kim/RevIN
-
-https://github.com/timeseriesAI/tsai
-
+The upstream repository credits SparseTSF, iTransformer, SegRNN, PatchTST, LTSF-Linear, Informer, Autoformer, FEDformer, Pyraformer, RevIN, and tsai for related code and datasets. [Apache License 2.0](LICENSE)

@@ -1,8 +1,172 @@
-.idea/
-*.pyc
-#*.pth
+# ============================================================
+# CycleNet / Machine Learning Research Project
+# ============================================================
+
+# ------------------------------------------------------------
+# 1. Python cache and temporary files
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.cache/
+
+# ------------------------------------------------------------
+# 2. Virtual environments
+# ------------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+conda-env/
+
+# ------------------------------------------------------------
+# 3. Private files and credentials
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.sample
+
+*.pem
+*.key
+*.p12
+*.pfx
+*.secret
+
+credentials.json
+service-account*.json
+kaggle.json
+
+.kaggle/
+.aws/
+.ssh/
+
+id_rsa
+id_ed25519
+
+# ------------------------------------------------------------
+# 4. Large datasets
+# ------------------------------------------------------------
 dataset/
-test_results/
+datasets/
+data/
+downloads/
+
+# ------------------------------------------------------------
+# 5. Model checkpoints and weights
+# ------------------------------------------------------------
+checkpoints/
+dependency_checkpoints/
+paper_reproduction_checkpoints/
+weights/
+pretrained/
+pretrained_models/
+
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.gguf
+*.onnx
+*.h5
+*.hdf5
+*.joblib
+*.pkl
+
+# ------------------------------------------------------------
+# 6. Large binary files and local study databases
+# ------------------------------------------------------------
+*.npy
+*.npz
+*.parquet
+*.feather
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite*-journal
+*.sqlite*-shm
+*.sqlite*-wal
+
+*.tar
+*.tar.xz
+*.tar.bz2
+*.tar.zst
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+
+# ------------------------------------------------------------
+# 7. Experiment results and outputs
+# ------------------------------------------------------------
 results/
+test_results/
+outputs/
+output/
+runs/
+wandb/
+lightning_logs/
+tensorboard/
+
+grid_search_results/
+solar_grid_results*/
+solar_tqnet_lookback_results/
+
+# Per-trial output from fixed-lookback grids
+/fixed_lookback_grid/**/records/
+/fixed_lookback_grid/**/locks/
+/fixed_lookback_grid/**/done/
+/fixed_lookback_grid/**/summary.lock
+/mi_srp_results/mi_pair_details.csv
+
+# Dependency matrices
+dependency_scores/archive/
+
+# ------------------------------------------------------------
+# 8. Training and SLURM logs
+# ------------------------------------------------------------
 logs/
+
+*.log
+*.out
+*.err
+
+slurm-*.out
+slurm-*.err
+
+events.out.tfevents.*
+
+# ------------------------------------------------------------
+# 9. Editor and operating system files
+# ------------------------------------------------------------
+.vscode/
+.idea/
+
 .DS_Store
+Thumbs.db
+
+*.swp
+*.swo
+*~
+
+# ============================================================
+# IMPORTANT FILES TO KEEP IN GIT
+# ============================================================
+
+# Python source files (.py)
+# Training scripts (.sh)
+# SLURM submission scripts (.slurm)
+# README.md
+# requirements.txt
+# pyproject.toml
+# uv.lock
+# Small CSV result summaries
+# Research documentation
